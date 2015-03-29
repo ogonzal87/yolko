@@ -4,20 +4,14 @@ var appControllers = angular.module('appControllers', ['firebase']);
 
 myApp.config(['$routeProvider', function($routeProvider) {
 	$routeProvider
-		.when('/login', {
-			templateUrl: 'views/login.html',
-			controller: 'RegistrationController'
+		.when('/', {
+			templateUrl: 'views/home.html',
 		})
-		.when('/register', {
-			templateUrl: 'views/register.html',
-			controller: 'RegistrationController'
-		})
-		.when('/meetings', {
-			templateUrl: 'views/meetings.html',
-			controller: 'MeetingsController', 
-			}
+		.when('/meeting', {
+			templateUrl: 'views/meeting.html',
+			controller: 'MeetingController' 
 		})
 		.otherwise({
-			redirectTo: '/login'
+			redirectTo: '/'
 		});
 }]);
