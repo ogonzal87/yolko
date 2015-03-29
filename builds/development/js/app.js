@@ -11,6 +11,9 @@ myApp.config(['$routeProvider', function($routeProvider) {
 			templateUrl: 'views/meeting.html',
 			controller: 'MeetingController' 
 		})
+		.when('/results', {
+			templateUrl: 'views/results.html', 
+		})
 		.otherwise({
 			redirectTo: '/'
 		});
