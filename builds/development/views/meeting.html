@@ -5,11 +5,18 @@
 	<div>
 	  <button class="btn btn-success" 
 	  	ng-click="voteUp()">Vote Up</button> <!-- vote up -->
-		<button class="btn btn-success" 
+		<button class="btn btn-warning" 
 			ng-click="neutral()">Neutral</button> <!-- vote neutral -->					
-	  <button class="btn btn-red" 
+	  <button class="btn btn-danger" 
 	  	ng-click="voteDown()">Vote Down</button> <!-- vote down -->
 	</div> <!-- bottons -->
+
+	<div ng-model="counter">{{counter}}</div>
+
+
+
+
+
 
 	<div class="meeting" ng-repeat="(key, meeting) in meetings">
 		<button class="btn btn-delete tooltip" 

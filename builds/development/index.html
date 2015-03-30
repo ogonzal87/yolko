@@ -5,7 +5,14 @@
   <title>Poll Me</title>
   <meta name="viewport" content="width=device-width, user-scalable=no">
 
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
   <link rel="stylesheet" href="css/style.css">
+
+
   <script src="js/lib/angular/angular.min.js"></script>
   <script src="js/lib/angular/angular-route.min.js"></script>
   <script src="js/lib/angular/angular-animate.min.js"></script>
@@ -17,13 +24,18 @@
 
   <script src="js/app.js"></script>
   <script src="js/controllers/meeting.js"></script>
-</head>
-<body>
-<header>
-	<nav class="cf" ng-include="'views/nav.html'"></nav>
-</header>
-<div class="page">
-  <main class="cf" ng-view=""></main>
-</div>
-</body>
+
+
+
+
+
+  </head>
+  <body>
+    <header>
+    	<nav ng-include="'views/nav.html'"></nav>
+    </header>
+    <div class="page">
+      <main class="cf" ng-view=""></main>
+    </div>
+  </body>
 </html>
