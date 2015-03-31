@@ -4,8 +4,7 @@ myApp.controller('MeetingController', function($scope, $rootScope, $firebaseArra
   var firebaseUrl = 'https://pollit.firebaseio.com/';
 
   // GET CLICKS AS ARRAY
-  $scope.voteUps = $firebaseArray(new Firebase(firebaseUrl + '/voteUps'));
-  $scope.voteNeutrals = $firebaseArray(new Firebase(firebaseUrl + '/voteNeutrals'));
+  $scope.voteUps   = $firebaseArray(new Firebase(firebaseUrl + '/voteUps'));
   $scope.voteDowns = $firebaseArray(new Firebase(firebaseUrl + '/voteDowns'));
 
 
@@ -14,34 +13,32 @@ myApp.controller('MeetingController', function($scope, $rootScope, $firebaseArra
   }
 
   $scope.voteDown = function() {
-    $scope.voteDowns.$add(1);
+    $scope.voteDowns.$add(1).then(function() {
+      $scope.voteDowns.$remove();
+    });
   }
 
  // voteUps Counter
-  $scope.voteUps.$loaded(function(data) {
+  $scope.voteUps.$watch(function() {
     $rootScope.howManyVoteUps = $scope.voteUps.length;
-  });
-  $scope.voteUps.$watch(function(data) {
-    $rootScope.howManyVoteUps = $scope.voteUps.length;
+    $scope.delta = $rootScope.howManyVoteUps - $rootScope.howManyVoteDowns;
   }); //counter
 
  // voteNeutral Counter
-  $scope.voteDowns.$loaded(function(data) {
+  $scope.voteDowns.$watch(function() {
     $rootScope.howManyVoteDowns = $scope.voteDowns.length;
-  });
-  $scope.voteDowns.$watch(function(data) {
-    $rootScope.howManyVoteDowns = $scope.voteDowns.length;
+    $scope.delta = $rootScope.howManyVoteUps - $rootScope.howManyVoteDowns;
   }); //counter
 
+  $scope.message = function() {
+    if ($scope.delta < 0) {
+        $scope.bad = 'You are doing Bad!!!!!';
+      } else {
+        $scope.good = 'You are doing Great!';
+      };
+  } //message
 
-$scope.delta = $watch($rootScope.howManyVoteUps - $rootScope.howManyVoteDowns);
-
-
-
-
-
-
-
+  //math function
 
 
 

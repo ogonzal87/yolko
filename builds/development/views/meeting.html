@@ -10,25 +10,17 @@
 	</div> <!-- bottons -->
 
 	<div ng-show="howManyVoteUps">
-		{{ howManyVoteUps }}
+		<p>Vote Ups: {{ howManyVoteUps }}</p>
 	</div>
 
 	<div ng-show="howManyVoteDowns">
-		{{ howManyVoteDowns }}
+		<p>Vote Downs: {{ howManyVoteDowns }}</p>
 	</div>
 
 	<div ng-show="delta">
-		{{ delta }}
+		<p>This is the delta (VoteUps - voteDowns): {{ delta }}</p>
 	</div>
 
+	<div ng-onload="message()">{{ bad }}</div>
 
-
-
-
-	<div class="meeting" ng-repeat="(key, meeting) in meetings">
-		<button class="btn btn-delete tooltip" 
-			ng-click="deleteMeeting(key)">
-		<span>Delete this meeting</span></button>
-		<span class="text">{{meeting.name}}</span>
-	</div><!-- meeting list	 -->
-</div><!-- meetings cf -->
+</div>
