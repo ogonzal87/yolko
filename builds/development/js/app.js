@@ -23,7 +23,13 @@ myApp.config(['$routeProvider', function($routeProvider) {
 		.when('/results', {
 			templateUrl: 'views/results.html', 
 		})
+		.when('/presentation/:accessCode', {
+			templateUrl: 'views/presentation.html',
+			controller: 'PresentationController'
+		})
 		.otherwise({
 			redirectTo: '/'
 		});
 }]);
+
+myApp.value('currentUser',{name: 'abdul'});
