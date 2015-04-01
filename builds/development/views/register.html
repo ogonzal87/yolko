@@ -1,0 +1,32 @@
+<section class="register">
+	<form name="myform" novalidate
+		ng-submit="register()">
+		<h1>Hi There!</h1>
+		<p>Register to access the awsomeness!</p>
+
+		<p ng-show="errormessage">{{errormessage}}</p>
+
+		<input type="name" name="name" placeholder="Name" autofocus
+			ng-model="presenter.name" ng-required="true">
+			<p ng-show="myform.name.$invalid && myform.name.$touched">
+				You must provide a name!
+			</p>
+
+		<input type="email" name="email" placeholder="Email" autofocus
+			ng-model="presenter.email" ng-required="true">
+			<p ng-show="myform.email.$invalid && myform.email.$touched">
+				Must be a valid email!
+			</p>
+
+		<input type="password" name="password" placeholder="Password"
+			ng-model="presenter.password" ng-required="true">
+			<p ng-show="myform.email.$invalid && myform.email.$touched">
+				Password is required!
+			</p>
+
+			<button type="submit" class="btn btn-default"
+				ng-disabled="myform.$invalid">Register</button>
+			<p>or <a href="#/login">Login</a></p>
+
+	</form>
+</section>
