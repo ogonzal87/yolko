@@ -1,40 +1,67 @@
-myApp.controller('MeetingController', function(FIREBASE_URL, $scope, $rootScope, $firebaseObject, $firebaseArray) {
-
-	//FIREBASE REFERENCE
-  // var firebaseRef = 'https://pollit.firebaseio.com/';
+myApp.controller('MeetingController', function($timeout, FIREBASE_URL, $scope, $firebaseObject, $firebaseArray) {
 
   // GET CLICKS AS ARRAY
   $scope.voteUps   = $firebaseArray(new Firebase(FIREBASE_URL + '/voteUps'));
   $scope.voteDowns = $firebaseArray(new Firebase(FIREBASE_URL + '/voteDowns'));
+  $scope.questions  = $firebaseArray(new Firebase(FIREBASE_URL + '/questions'));
 
   updateMessage();
 
-  console.log($scope.voteUps);
-  console.log($scope.voteDowns);
-
   $scope.voteUp = function() {
     $scope.voteUps.$add(1);
-  }
+    $scope.voteUpDisabled = true;
+
+    var enableSwitch = function() {
+      $scope.voteUpDisabled = false;
+    };
+    $timeout(enableSwitch, 1000);
+  };//switch back to active after 3 minutes
+
 
   $scope.voteDown = function() {
-    $scope.voteDowns.$add(1)
-  }
+    $scope.voteDowns.$add(1);
+    $scope.voteDownDisabled = true;
+
+    var enableSwitch = function() {
+      $scope.voteDownDisabled = false;
+    };
+    $timeout(enableSwitch, 1000);
+  };//swich back to active after 3 minutes
 
  // voteUps Counter
   $scope.voteUps.$watch(function() {
-    $rootScope.howManyVoteUps = $scope.voteUps.length;
-    $scope.delta = $rootScope.howManyVoteUps - $rootScope.howManyVoteDowns;
+    $scope.howManyVoteUps = $scope.voteUps.length;
+    $scope.delta = $scope.howManyVoteUps - $scope.howManyVoteDowns;
+    $scope.totalVotes = $scope.howManyVoteUps + $scope.howManyVoteDowns;
+    $scope.failureRate = ($scope.howManyVoteDowns / $scope.totalVotes) * 100;
     updateMessage();
-  }); //counter
+    showColor(); 
+  });//counter
 
- // voteNeutral Counter
+ // voteDowns Counter
   $scope.voteDowns.$watch(function() {
-    $rootScope.howManyVoteDowns = $scope.voteDowns.length;
-    $scope.delta = $rootScope.howManyVoteUps - $rootScope.howManyVoteDowns;
-    updateMessage();
+    $scope.howManyVoteDowns = $scope.voteDowns.length;
+    $scope.delta = $scope.howManyVoteUps - $scope.howManyVoteDowns;
+    $scope.totalVotes = $scope.howManyVoteUps + $scope.howManyVoteDowns;
+    $scope.failureRate = ($scope.howManyVoteDowns / $scope.totalVotes) * 100;
+    updateMessage(); 
+    showColor(); 
   }); //counter
 
-  /*** UTILITY FUNCTIONS ***/
+//Questions
+  $scope.addQuestion = function(e) {
+    if (e.keyCode === 13 && $scope.question) {
+      $scope.questions.$add({ 
+        question: $scope.question 
+      });
+      $scope.question = "";
+    };
+  };//questions
+
+
+/*** UTILITY FUNCTIONS ***/
+
+//Message to Presenter
   function updateMessage() {
     if ($scope.delta < 0) {
         $scope.message = 'You are doing Bad!!!!!';
@@ -45,17 +72,28 @@ myApp.controller('MeetingController', function(FIREBASE_URL, $scope, $rootScope,
       };
   } //message
 
-  //math function
+
+
+//Shapes and Colors
+  $scope.green = true;
+  function showColor() {
+    $scope.green  = $scope.failureRate < 31 || null;
+    $scope.red    = $scope.failureRate > 65;
+    $scope.yellow = $scope.failureRate >= 32 && $scope.failureRate <= 64;
+  }; //Show Color
+
+    
+
+
+
 
   var anonFunc = function() {
+    // console.log('helo')
   }
-    anonFunc();
-
+      anonFunc();
 
   namedFunc();
   function namedFunc() {
-
+    // console.log('helo')
   }
-
-
 }); //MeetingController
