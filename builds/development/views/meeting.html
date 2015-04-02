@@ -1,20 +1,58 @@
-<div class="meetings cf">
+<div class="meeting">
 
 <h1>How are you feeling?</h1>
 	
 	<div>
 	  <button class="btn btn-success" 
-	  	ng-click="voteUp()">Vote Up</button> <!-- vote up -->
-		<button class="btn btn-success" 
-			ng-click="neutral()">Neutral</button> <!-- vote neutral -->					
-	  <button class="btn btn-red" 
-	  	ng-click="voteDown()">Vote Down</button> <!-- vote down -->
+	  	ng-click="voteUp()" ng-disabled="voteUpDisabled">Vote Up</button> <!-- vote up -->				
+	  <button class="btn btn-danger" 
+	  	ng-click="voteDown()" ng-disabled="voteDownDisabled">Vote Down</button> <!-- vote down -->
 	</div> <!-- bottons -->
 
-	<div class="meeting" ng-repeat="(key, meeting) in meetings">
-		<button class="btn btn-delete tooltip" 
-			ng-click="deleteMeeting(key)">
-		<span>Delete this meeting</span></button>
-		<span class="text">{{meeting.name}}</span>
-	</div><!-- meeting list	 -->
-</div><!-- meetings cf -->
+
+	<!-- <div ng-show="howManyVoteUps">
+		<p>Vote Ups: {{ howManyVoteUps }}</p>
+	</div>
+
+	<div ng-show="howManyVoteDowns">
+		<p>Vote Downs: {{ howManyVoteDowns }}</p>
+	</div>
+
+	<div ng-show="delta">
+		<p>This is the delta (VoteUps - voteDowns): {{ delta }}</p>
+	</div>
+	
+	{{ message }}
+<br>
+	{{ totalVotes }}
+<br>
+	Failure Rate: {{ failureRate }}%
+
+<pre>
+	green: {{green}}
+	yellow: {{yellow}}
+	red: {{red}}
+</pre> -->
+
+<div ng-show="green" style="width:500px;height:100px;border:1px solid #000; background-color: green;"></div>
+<div ng-show="yellow" style="width:500px;height:100px;border:1px solid #000; background-color: yellow;"></div>
+<div ng-show="red" style="width:500px;height:100px;border:1px solid #000; background-color: red;"></div>
+
+<div>
+	<input ng-model="question" type="text" placeholder="Ask me... (is anonymous)"
+		ng-keydown="addQuestion($event)">
+</div>
+
+<ul>
+  <li ng-repeat="question in questions">
+    {{ question.question }}
+  </li>
+</ul>
+
+	<!-- <div ng-repeat="vote in voteUps">{{voteUps}}</div> -->
+<!-- 	<div ng-model="voteUps">{{voteUps[0].$id}}</div>
+ -->
+<!-- 	<div ng-repeat="vote in voteDowns">{{voteDown}}</div>
+	<div ng-model="voteDowns">{{voteDowns.$id}}</div> -->
+
+</div>
