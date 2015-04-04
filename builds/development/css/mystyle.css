@@ -1,0 +1,36 @@
+/* Typography
+================================= */
+
+.navbar-text {
+	font-weight: bold;
+	margin-right: 0;
+}
+
+/* Jumbotron
+================================= */
+
+.jumbotron {
+	background-image: url('../img/main-bg.png');
+	background-repeat: no-repeat;
+	background-position: 200% 100%;
+	padding: 200px 0 140px 0;
+	margin-bottom: 70px;
+}
+
+/* Logos & Icons
+================================= */
+
+.main-logo {
+	width: 124px;
+	height: 34px;
+	margin-top: 22px;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	background: url('../img/main-logo.png') no-repeat;
+	background-size: 100%;
+}
+
+
+
+

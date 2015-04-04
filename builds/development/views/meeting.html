@@ -1,13 +1,24 @@
-<div class="meeting">
+<div class="jumbotron">
+	<div class="container">
 
-<h1>How are you feeling?</h1>
+		<div>
+			<h1>How are you feeling?</h1>
+		
+			<div>
+			  <button class="btn btn-success" 
+			  	ng-click="voteUp()" ng-disabled="voteUpDisabled">Vote Up</button> <!-- vote up -->				
+			  <button class="btn btn-danger" 
+			  	ng-click="voteDown()" ng-disabled="voteDownDisabled">Vote Down</button> <!-- vote down -->
+			</div> <!-- bottons -->
+
+			
+		</div>
+		
+	</div>
 	
-	<div>
-	  <button class="btn btn-success" 
-	  	ng-click="voteUp()" ng-disabled="voteUpDisabled">Vote Up</button> <!-- vote up -->				
-	  <button class="btn btn-danger" 
-	  	ng-click="voteDown()" ng-disabled="voteDownDisabled">Vote Down</button> <!-- vote down -->
-	</div> <!-- bottons -->
+</div>
+
+
 
 
 	<!-- <div ng-show="howManyVoteUps">
@@ -43,16 +54,21 @@
 		ng-keydown="addQuestion($event)">
 </div>
 
-<ul>
-  <li ng-repeat="question in questions">
-    {{ question.question }}
-  </li>
-</ul>
+<div>
+	<div>
+
+		<ul>
+		  <li ng-repeat="question in questions">
+		    {{ question.question }}
+		  </li>
+		</ul>
+
+	</div>
+</div>
+
 
 	<!-- <div ng-repeat="vote in voteUps">{{voteUps}}</div> -->
 <!-- 	<div ng-model="voteUps">{{voteUps[0].$id}}</div>
  -->
 <!-- 	<div ng-repeat="vote in voteDowns">{{voteDown}}</div>
 	<div ng-model="voteDowns">{{voteDowns.$id}}</div> -->
-
-</div>
