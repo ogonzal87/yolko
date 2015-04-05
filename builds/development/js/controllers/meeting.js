@@ -1,35 +1,34 @@
 myApp.controller('MeetingController', function($timeout, FIREBASE_URL, $scope, $firebaseObject, $firebaseArray) {
 
-  // GET CLICKS AS ARRAY
+  // Firebse Connections
   var voteUpAll    = new Firebase(FIREBASE_URL + '/voteUps');
   var voteDownAll  = new Firebase(FIREBASE_URL + '/voteDowns');
-  var questionsAll = new Firebase(FIREBASE_URL + '/questions');
-  // var questionRef  = new Firebase(FIREBASE_URL + '/questions/' + question.id);
   $scope.voteUps   = $firebaseArray(new Firebase(FIREBASE_URL + '/voteUps'));
   $scope.voteDowns = $firebaseArray(new Firebase(FIREBASE_URL + '/voteDowns'));
   $scope.questions = $firebaseArray(new Firebase(FIREBASE_URL + '/questions'));
 
+  $scope.zzz = true;
   updateMessage();
 
   $scope.voteUp = function() {
     $scope.voteUps.$add(1);
-    // $scope.voteUpDisabled = true;
+    $scope.voteUpDisabled = true;
 
     var enableSwitch = function() {
       $scope.voteUpDisabled = false;
     };
-    $timeout(enableSwitch, 1000);
+    $timeout(enableSwitch, 10000);
   };//switch back to active after 3 minutes
 
 
   $scope.voteDown = function() {
     $scope.voteDowns.$add(1);
-    // $scope.voteDownDisabled = true;
+    $scope.voteDownDisabled = true;
 
     var enableSwitch = function() {
       $scope.voteDownDisabled = false;
     };
-    $timeout(enableSwitch, 1000);
+    $timeout(enableSwitch, 10000);
   };//swich back to active after 3 minutes
 
  // voteUps Counter
@@ -38,7 +37,6 @@ myApp.controller('MeetingController', function($timeout, FIREBASE_URL, $scope, $
     $scope.delta = $scope.howManyVoteUps - $scope.howManyVoteDowns;
     $scope.totalVotes = $scope.howManyVoteUps + $scope.howManyVoteDowns;
     $scope.failureRate = ($scope.howManyVoteDowns / $scope.totalVotes) * 100;
-    $scope.zzz = true;
     updateMessage();
     displayYolko(); 
   });//counter
@@ -71,18 +69,7 @@ myApp.controller('MeetingController', function($timeout, FIREBASE_URL, $scope, $
   };//questions
 
 
-/*** UTILITY FUNCTIONS ***/
-
-//Message to Presenter
-  // function updateMessage() {
-  //   if ($scope.delta < 0) {
-  //       $scope.message = 'Dude, I dont get this...';
-  //     } else if ($scope.delta == 0) {
-  //       $scope.message = 'You Good!';
-  //     } else {
-  //       $scope.message = 'Dude, you are killing it out there. Do your thang!';
-  //     };
-  // } //message
+// ======================** UTILITY FUNCTIONS **===================================
 
 //Displaying Yolko
   $scope.zzz = true;
