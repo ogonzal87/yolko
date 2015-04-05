@@ -6,23 +6,56 @@
 
 			<h1>Yolko, how are you feeling?</h1>
 
-			<div ng-show="green">
-				<img src="../img/igotthis.png"/>
-			</div>
-			<div ng-show="yellow">
-				<img src="../img/idontgetit.png"/>
-			</div>
-			<div ng-show="red">
+			<div ng-show="zzz">
 				<img src="../img/zzz.png"/>
 			</div>
+			<div ng-show="laughing">
+				<img src="../img/laughing.png"/>
+			</div>
+			<div ng-show="igotthis">
+				<img src="../img/igotthis.png"/>
+			</div>
+			<div ng-show="easy">
+				<img src="../img/easy.png"/>
+			</div>
+			<div ng-show="easywhereisthefood">
+				<img src="../img/easywhereisthefood.png"/>
+			</div>
+			<div ng-show="yum">
+				<img src="../img/yum.png"/>
+			</div>
+			<div ng-show="startingtonotgetit">
+				<img src="../img/startingtonotgetit.png"/>
+			</div>
+			<div ng-show="idontgetit">
+				<img src="../img/idontgetit.png"/>
+			</div>
+			<div ng-show="shocked">
+				<img src="../img/shocked.png"/>
+			</div>
+			<div ng-show="fire">
+				<img src="../img/fire.png"/>
+			</div>
+			<div ng-show="beaten">
+				<img src="../img/beaten.png"/>
+			</div>
+			<div ng-show="burnt">
+				<img src="../img/burnt.png"/>
+			</div>
 
-			<h2>{{ message }}</h2>
 
 			<div>
-			  <button class="btn btn-lg btn-success"
-			  	ng-click="voteUp()" ng-disabled="voteUpDisabled">Doing great, yo!</button> <!-- vote up -->				
-			  <button class="btn btn-lg btn-danger"  
-			  	ng-click="voteDown()" ng-disabled="voteDownDisabled">Not too Happy</button> <!-- vote down -->
+				<h2 class="yolkomessage">{{ message }}</h2>
+			</div>
+
+			<div>
+			  <button class="btn btn-xlarge btn-success"
+			  	ng-click="voteUp()" ng-disabled="voteUpDisabled">
+			  	<span class="glyphicon glyphicon-thumbs-up"></span></button> <!-- vote up -->				
+			  
+			  <button class="btn btn-xlarge btn-danger"  
+			  	ng-click="voteDown()" ng-disabled="voteDownDisabled">
+			  	<span class="glyphicon glyphicon-thumbs-down"></span></button> <!-- vote down -->
 			</div> <!-- bottons -->
 
 			<!-- <div ng-show="green" style="width:500px;height:100px;border:1px solid #000; background-color: green;"></div>
@@ -34,31 +67,48 @@
 	</div>
 
 	<div class="container">
-		
-			<h1>{{ message }}</h1>
-			<h1>{{ totalVotes }}</h1>
-				Failure Rate: {{ failureRate }}%
 
-			<pre>
+		<div class="panel panel-default">
+	  	<div class="panel-body">
+	    	<h1>Total of Votes: {{ totalVotes }}</h1>
+	  	</div>
+		</div>
+			
+Failure Rate: {{ failureRate }}% 
+
+<!-- 			<pre>
 				green: {{green}}
 				yellow: {{yellow}}
 				red: {{red}}
-			</pre>
+			</pre> -->
 
-			<div>
-				<input ng-model="question" type="text" placeholder="Ask me... (is anonymous)"
-					ng-keydown="addQuestion($event)">
-			</div>
 
-			<div>
-				<div>
+			  <div class="form-group">
+				  <div class="input-group">
+				    <input ng-model="question" type="text" class="form-control" placeholder="Ask way..."
+							ng-keydown="addQuestionKeyDown($event)">
+				    <span class="input-group-btn">
+				      <button class="btn btn-default askbutton" type="button" ng-click="addQuestionClick()">Ask</button>
+				    </span>
+				  </div>
+				</div>
 
-					<ul>
-					  <li ng-repeat="question in questions">
-					    {{ question.question }}
-					  </li>
-					</ul>
+					<div class="panel panel-default">
+				  	<div class="panel-body">
+				    	<ul class="list-group">
+							  <li class="list-group-item" ng-repeat="(key, question) in questions">
+							    {{ question.question }} 
+							    <span>
+							      <button class="btn btn-sm btn-default alignright" ng-click="removeQuestion(key)">X</button>
+							    </span>
+							  </li>
+							</ul>
+				  	</div>
+					</div>
 
+		<button class="resetbutton btn btn-sm btn-default" ng-click="deleteAllVotes()">Reset Yolko</button>
+		<button class="resetbutton btn btn-sm btn-default" ng-click="deleteAllQuestions()">Reset Questions</button>
+		
 				</div>
 			</div>
 		</div>

@@ -18,6 +18,30 @@
 	margin-bottom: 20px;
 }
 
+.yolkomessage {
+	color:#fff;
+	padding-bottom: 20px;
+}
+
+.panel-body {
+	text-align: center;
+}
+
+.list-group-item {
+	text-align: left;
+	font-size: 20px;
+	word-wrap: break-word;
+}
+
+.form-control {
+	font-size: 20px;
+	padding: 30px;
+}
+
+.form-group {
+	margin-bottom: none;
+}
+
 /* Jumbotron
 ================================= */
 
@@ -25,12 +49,16 @@
 	background-image: url('../img/main-bg.png');
 	background-repeat: no-repeat;
 	background-position: 200% 100%;
-	padding: 200px 0 140px 0;
-	margin-bottom: 70px;
+	padding: 200px 0 100px 0;
+	margin-bottom: 20px;
 }
 
 .meetingjumbotronn {
-	text-align: center
+	text-align: center;
+}
+
+.containerhome {
+	text-align: center;
 }
 
 h1 {
@@ -52,8 +80,6 @@ p {
 strong {
 	color: #5f5d60;
 }
- 
-
 
 .lead {
 	color: #d5c1f2;
@@ -68,7 +94,6 @@ strong {
 	border-width: 2px;
 	border-color: inherit;
 	margin-right: 15px;
-	padding: 12px 22px;
 }
 
 .btn-default:hover {
@@ -77,8 +102,27 @@ strong {
 	border-color: #fff;
 }
 
+.btn-xlarge {
+    padding: 18px 28px;
+    margin-left: 30px;
+    margin-top: 30px; 
+    margin-bottom: 20px; 
+    font-size: 30px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}
 
-
+.askbutton {
+	font-size: 20px;
+	padding: 16px;
+}
+	
+.alignright {
+	display: inline-block;
+ 	float: right;
+}
 
 /* Logos & Icons
 ================================= */
@@ -92,6 +136,14 @@ strong {
 	overflow: hidden;
 	background: url('../img/logo.png') no-repeat;
 	background-size: 100%;
+}
+
+
+/*Navbar
+=======================================*/
+
+.navbar-default .navbar-nav > li > a {
+  color: #FCFCFC;
 }
 
 
@@ -120,3 +172,5 @@ strong {
 		margin-bottom: 40px;
 	}
 }
+
+
