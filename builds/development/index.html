@@ -2,15 +2,11 @@
 <html lang="en" ng-app="myApp">
 <head>
   <meta charset="UTF-8">
-  <title>Poll Me</title>
+  <title>Yolko | OG Productions</title>
   <meta name="viewport" content="width=device-width, user-scalable=no">
-
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-
-  <link rel="stylesheet" href="css/style.css">
+  
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/mystyle.css" rel="stylesheet" media="screen">
 
 
   <script src="js/lib/angular/angular.min.js"></script>
@@ -34,8 +30,14 @@
     <header>
     	<nav ng-include="'views/nav.html'"></nav>
     </header>
-    <div class="container">
-      <main class="cf" ng-view=""></main>
+    <div class>
+      <main ng-view=""></main>
     </div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="bootstrapjs/bootstrap.min.js"></script>
+
+
   </body>
 </html>

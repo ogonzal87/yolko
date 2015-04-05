@@ -1,0 +1,195 @@
+/*/* Typography
+================================= */
+
+.navbar-text {
+	font-weight: bold;
+	margin-right: 0;
+	color: #fff;
+}
+
+
+.lead {
+	color: #d5c1f2;
+	margin-bottom: 75px;
+}
+
+.lead:nthof-type(2) {
+	font-size: initial;
+	margin-bottom: 20px;
+}
+
+.yolkomessage {
+	color:#fff;
+	padding-bottom: 20px;
+}
+
+.panel-body {
+	text-align: center;
+}
+
+.list-group-item {
+	text-align: left;
+	font-size: 20px;
+	word-wrap: break-word;
+}
+
+.form-control {
+	font-size: 20px;
+	padding: 30px;
+}
+
+.form-group {
+	margin-bottom: none;
+}
+
+.yolkohome {
+	text-align: center;
+	padding-top: 50px;
+}
+
+.homemain {
+	margin-top: 50px;
+}
+
+.iconoshome {
+	text-align: center;
+	margin-top: none;
+	padding-top: none;
+}
+
+.padding {
+	padding-top: 40px;
+}
+
+/* Jumbotron
+================================= */
+
+.jumbotron {
+	background-image: url('../img/main-bg.png');
+	background-repeat: no-repeat;
+	background-position: 200% 100%;
+	padding: 200px 0 100px 0;
+	margin-bottom: 20px;
+}
+
+.meetingjumbotronn {
+	text-align: center;
+}
+
+.containerhome {
+	text-align: center;
+}
+
+h1 {
+	font-weight: 200;
+}
+
+h2, h3 {
+	color: #5f5d60;
+	margin-top: 0;
+}
+
+p {
+	color: #b3aeb5;
+	line-height: 1.7em;
+	font-size: 1.1em;
+	font-weight: 200;
+}
+
+strong {
+	color: #5f5d60;
+}
+
+.lead {
+	color: #d5c1f2;
+	margin-bottom: 75px;
+}
+
+
+/*Buttons
+=================================*/
+
+.btn-default {
+	border-width: 2px;
+	border-color: inherit;
+	margin-right: 15px;
+}
+
+.btn-default:hover {
+	background-color: #fff;
+	color: #957bba;
+	border-color: #fff;
+}
+
+.btn-xlarge {
+    padding: 18px 28px;
+    margin-left: 30px;
+    margin-top: 30px; 
+    margin-bottom: 20px; 
+    font-size: 30px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}
+
+.askbutton {
+	font-size: 20px;
+	padding: 16px;
+}
+	
+.alignright {
+	display: inline-block;
+ 	float: right;
+}
+
+/* Logos & Icons
+================================= */
+
+.main-logo {
+	width: 124px;
+	height: 34px;
+	margin-top: 22px;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	background: url('../img/logo.png') no-repeat;
+	background-size: 100%;
+}
+
+
+/*Navbar
+=======================================*/
+
+.navbar-default .navbar-nav > li > a {
+  color: #FCFCFC;
+}
+
+
+/*Media Queries
+======================================*/
+
+@media (max-width: 991px) {
+	.jumbotron {
+		padding-top: 120px;
+		padding-bottom: 20px;
+		background-position: 10% 10%;
+	}
+}
+
+@media (max-width: 767px) {
+
+	.main-logo {
+		width: 82px;
+		margin-top: 20px;
+	}
+	.jumbotron {
+		padding-top: 80px;
+		margin-bottom: 32px;
+	}
+	.lead {
+		margin-bottom: 40px;
+	}
+}
+
+
