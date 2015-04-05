@@ -73,42 +73,38 @@
 	    	<h1>Total of Votes: {{ totalVotes }}</h1>
 	  	</div>
 		</div>
-			
-Failure Rate: {{ failureRate }}% 
 
-<!-- 			<pre>
-				green: {{green}}
-				yellow: {{yellow}}
-				red: {{red}}
-			</pre> -->
+	  <div class="form-group">
+		  <div class="input-group">
+		    <input ng-model="question" type="text" class="form-control" placeholder="Ask way..."
+					ng-keydown="addQuestionKeyDown($event)">
+		    <span class="input-group-btn">
+		      <button class="btn btn-default askbutton" type="button" ng-click="addQuestionClick()">Ask</button>
+		    </span>
+		  </div>
+		</div>
 
-
-			  <div class="form-group">
-				  <div class="input-group">
-				    <input ng-model="question" type="text" class="form-control" placeholder="Ask way..."
-							ng-keydown="addQuestionKeyDown($event)">
-				    <span class="input-group-btn">
-				      <button class="btn btn-default askbutton" type="button" ng-click="addQuestionClick()">Ask</button>
+		<div class="panel panel-default">
+	  	<div class="panel-body">
+	    	<ul class="list-group">
+				  <li class="list-group-item" ng-repeat="(key, question) in questions">
+				    {{ question.question }} 
+				    <span>
+				      <button class="btn btn-sm btn-default alignright" ng-click="removeQuestion(key)">X</button>
 				    </span>
-				  </div>
-				</div>
-
-					<div class="panel panel-default">
-				  	<div class="panel-body">
-				    	<ul class="list-group">
-							  <li class="list-group-item" ng-repeat="(key, question) in questions">
-							    {{ question.question }} 
-							    <span>
-							      <button class="btn btn-sm btn-default alignright" ng-click="removeQuestion(key)">X</button>
-							    </span>
-							  </li>
-							</ul>
-				  	</div>
-					</div>
+				  </li>
+				</ul>
+	  	</div>
+		</div>
 
 		<button class="resetbutton btn btn-sm btn-default" ng-click="deleteAllVotes()">Reset Yolko</button>
 		<button class="resetbutton btn btn-sm btn-default" ng-click="deleteAllQuestions()">Reset Questions</button>
 		
+
+		<p>Failure Rate: {{ failureRate }}%</p>
+
+
+
 				</div>
 			</div>
 		</div>
