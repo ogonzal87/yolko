@@ -1,9 +1,21 @@
-/* Typography
+/*/* Typography
 ================================= */
 
 .navbar-text {
 	font-weight: bold;
 	margin-right: 0;
+	color: #fff;
+}
+
+
+.lead {
+	color: #d5c1f2;
+	margin-bottom: 75px;
+}
+
+.lead:nthof-type(2) {
+	font-size: initial;
+	margin-bottom: 20px;
 }
 
 /* Jumbotron
@@ -17,6 +29,57 @@
 	margin-bottom: 70px;
 }
 
+.meetingjumbotronn {
+	text-align: center
+}
+
+h1 {
+	font-weight: 200;
+}
+
+h2, h3 {
+	color: #5f5d60;
+	margin-top: 0;
+}
+
+p {
+	color: #b3aeb5;
+	line-height: 1.7em;
+	font-size: 1.1em;
+	font-weight: 200;
+}
+
+strong {
+	color: #5f5d60;
+}
+ 
+
+
+.lead {
+	color: #d5c1f2;
+	margin-bottom: 75px;
+}
+
+
+/*Buttons
+=================================*/
+
+.btn-default {
+	border-width: 2px;
+	border-color: inherit;
+	margin-right: 15px;
+	padding: 12px 22px;
+}
+
+.btn-default:hover {
+	background-color: #fff;
+	color: #957bba;
+	border-color: #fff;
+}
+
+
+
+
 /* Logos & Icons
 ================================= */
 
@@ -27,10 +90,33 @@
 	text-indent: 100%;
 	white-space: nowrap;
 	overflow: hidden;
-	background: url('../img/main-logo.png') no-repeat;
+	background: url('../img/logo.png') no-repeat;
 	background-size: 100%;
 }
 
 
+/*Media Queries
+======================================*/
 
+@media (max-width: 991px) {
+	.jumbotron {
+		padding-top: 120px;
+		padding-bottom: 20px;
+		background-position: 10% 10%;
+	}
+}
 
+@media (max-width: 767px) {
+
+	.main-logo {
+		width: 82px;
+		margin-top: 20px;
+	}
+	.jumbotron {
+		padding-top: 80px;
+		margin-bottom: 32px;
+	}
+	.lead {
+		margin-bottom: 40px;
+	}
+}

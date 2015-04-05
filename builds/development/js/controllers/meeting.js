@@ -35,7 +35,7 @@ myApp.controller('MeetingController', function($timeout, FIREBASE_URL, $scope, $
     $scope.totalVotes = $scope.howManyVoteUps + $scope.howManyVoteDowns;
     $scope.failureRate = ($scope.howManyVoteDowns / $scope.totalVotes) * 100;
     updateMessage();
-    showColor(); 
+    displayYolko(); 
   });//counter
 
  // voteDowns Counter
@@ -45,7 +45,7 @@ myApp.controller('MeetingController', function($timeout, FIREBASE_URL, $scope, $
     $scope.totalVotes = $scope.howManyVoteUps + $scope.howManyVoteDowns;
     $scope.failureRate = ($scope.howManyVoteDowns / $scope.totalVotes) * 100;
     updateMessage(); 
-    showColor(); 
+    displayYolko(); 
   }); //counter
 
 //Questions
@@ -64,7 +64,7 @@ myApp.controller('MeetingController', function($timeout, FIREBASE_URL, $scope, $
 //Message to Presenter
   function updateMessage() {
     if ($scope.delta < 0) {
-        $scope.message = 'You are doing Bad!!!!!';
+        $scope.message = 'Dude, I dont get this...';
       } else if ($scope.delta == 0) {
         $scope.message = 'You Good!';
       } else {
@@ -76,7 +76,7 @@ myApp.controller('MeetingController', function($timeout, FIREBASE_URL, $scope, $
 
 //Shapes and Colors
   $scope.green = true;
-  function showColor() {
+  function displayYolko() {
     $scope.green  = $scope.failureRate < 31 || null;
     $scope.red    = $scope.failureRate > 65;
     $scope.yellow = $scope.failureRate >= 32 && $scope.failureRate <= 64;
