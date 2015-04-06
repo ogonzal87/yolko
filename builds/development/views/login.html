@@ -1,26 +1,31 @@
-<section class="login">
+<div class="container register">
 	<form name="myform" novalidate
 		ng-submit="login()">
-		<h1>Hi There!</h1>
-		<p>Login to access the awsomeness!</p>
+		
+		<div class="form-group">
+			<h1>Hi There!</h1>
+			<h4>Login to access the awsomeness!</h4>
 
-		<p ng-show="errormessage">{{errormessage}}</p>
+			<p ng-show="errormessage">{{errormessage}}</p>
 
-		<input type="email" name="email" placeholder="Email" autofocus
-			ng-model="presenter.email" ng-required="true">
-			<p ng-show="myform.email.$invalid && myform.email.$touched">
-				Must be a valid email!
-			</p>
+			<input type="email" name="email" class="form-control" placeholder="Email" autofocus
+				ng-model="presenter.email" ng-required="true">
+				<p style="color: red" ng-show="myform.email.$invalid && myform.email.$touched">
+					Must be a valid email!
+				</p>
+		</div>	
 
-		<input type="password" name="password" placeholder="Password"
-			ng-model="presenter.password" ng-required="true">
-			<p ng-show="myform.email.$invalid && myform.email.$touched">
-				Password is required!
-			</p>
+		<div class="form-group">
+			<input type="password" name="password" class="form-control" placeholder="Password"
+				ng-model="presenter.password" ng-required="true">
+				<p style="color: red" ng-show="myform.email.$invalid && myform.email.$touched">
+					Password is required!
+				</p>
+		</div>
 
-			<button type="submit" class="btn btn-default"
+			<button type="submit" class="btn btn-lg btn-default"
 				ng-disabled="myform.$invalid">Login</button>
 			<p>or <a href="#/register">register</a></p>
 
 	</form>
-</section>
+</div>
