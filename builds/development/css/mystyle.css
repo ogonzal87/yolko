@@ -7,7 +7,6 @@
 	color: #fff;
 }
 
-
 .lead {
 	color: #d5c1f2;
 	margin-bottom: 75px;
@@ -63,6 +62,10 @@
 
 .mathmessages {
 	color: #E7E7E7;
+}
+
+.register {
+	margin-top: 120px;
 }
 
 /* Jumbotron
