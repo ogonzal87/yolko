@@ -48,9 +48,16 @@
 
 .homemain {
 	margin-top: 50px;
+	margin-bottom: 70px;
 }
 
 .iconoshome {
+	text-align: center;
+	margin-top: none;
+	padding-top: none;
+}
+
+.iconoresult {
 	text-align: center;
 	margin-top: none;
 	padding-top: none;
@@ -65,6 +72,10 @@
 }
 
 .register {
+	margin-top: 120px;
+}
+
+.results {
 	margin-top: 120px;
 }
 
@@ -172,6 +183,23 @@ strong {
   color: #FCFCFC;
 }
 
+
+/*Footer
+=======================================*/
+
+
+.site-footer {
+	padding: 20px;
+	margin-top: 50px;
+	height: 100px;
+	color: #fff;
+	background-color: #A085C6;
+}
+
+.footertext {
+	color: #FBFAFA;
+	text-decoration: none;
+}
 
 /*Media Queries
 ======================================*/

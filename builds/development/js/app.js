@@ -21,7 +21,8 @@ myApp.config(['$routeProvider', function($routeProvider) {
 			controller: 'MeetingController' 
 		})
 		.when('/results', {
-			templateUrl: 'views/results.html', 
+			templateUrl: 'views/results.html',
+			controller: 'MeetingController'  
 		})
 		.when('/presentation/:accessCode', {
 			templateUrl: 'views/presentation.html',

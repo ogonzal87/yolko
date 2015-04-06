@@ -1,0 +1,34 @@
+<div class="container results">
+	<h1>Hello There Presenter</h1>
+
+	<div class="iconoresult">
+		<img src="../img/hola.png"/>
+		<h2>You got this! You hear me!?</h2>
+	</div>
+
+	<div class="panel panel-default">
+  	<div class="panel-body">
+  		<strong><h1>{{ failureRate | number:0 }}% of your audience hate you</h1></strong>
+    	<h1>Total of Votes: {{ totalVotes }}</h1>
+			<h1>Happy Votes: {{ howManyVoteUps }}</h1>
+			<h1>Sad Votes: {{ howManyVoteDowns }}</h1>
+  	</div>
+	</div>
+
+	<button class="resetbutton btn btn-danger" ng-click="deleteAllVotes()">Reset Yolko</button>
+	<button class="resetbutton btn btn-danger" ng-click="deleteAllQuestions()">Reset Questions</button>
+
+			<div class="panel panel-default">
+	  	<div class="panel-body">
+	    	<ul class="list-group">
+				  <li class="list-group-item" ng-repeat="(key, question) in questions">
+				    {{ question.question }} 
+				    <span>
+				      <button class="btn btn-sm btn-default alignright" ng-click="removeQuestion(key)">X</button>
+				    </span>
+				  </li>
+				</ul>
+	  	</div>
+		</div>
+
+</div>
