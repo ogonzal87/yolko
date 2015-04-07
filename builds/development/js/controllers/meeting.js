@@ -17,7 +17,7 @@ myApp.controller('MeetingController', function($timeout, FIREBASE_URL, $scope, $
     var enableSwitch = function() {
       $scope.voteUpDisabled = false;
     };
-    $timeout(enableSwitch, 5000);
+    $timeout(enableSwitch, 3000);
   };//switch back to active after 3 minutes
 
 
@@ -28,7 +28,7 @@ myApp.controller('MeetingController', function($timeout, FIREBASE_URL, $scope, $
     var enableSwitch = function() {
       $scope.voteDownDisabled = false;
     };
-    $timeout(enableSwitch, 5000);
+    $timeout(enableSwitch, 3000);
   };//swich back to active after 3 minutes
 
  // voteUps Counter
