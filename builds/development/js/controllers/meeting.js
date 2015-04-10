@@ -52,7 +52,7 @@ myApp.controller('MeetingController', function($timeout, FIREBASE_URL, $scope, $
   }); //counter
 
 //Questions
-  $scope.addQuestionKeyDown = function(e) {
+  $scope.addQuestionKeyDown = function(event) {
     if (e.keyCode === 13 && $scope.question) {
       $scope.questions.$add({ 
         question: $scope.question 
@@ -105,9 +105,9 @@ myApp.controller('MeetingController', function($timeout, FIREBASE_URL, $scope, $
       } else if ($scope.failureRate >= 40 && $scope.failureRate <= 47.999999999999) {
         $scope.message = 'Yummmm'; //yum
       } else if ($scope.failureRate >= 48 && $scope.failureRate <= 55.999999999999) {
-        $scope.message = 'Psh, is he still speaking English?';//startingtonotgetit
+        $scope.message = 'Psh, are you getting what he is saying?';//startingtonotgetit
       } else if ($scope.failureRate >= 56 && $scope.failureRate <= 63.999999999999) {
-        $scope.message = 'Yep, I am lost';//idontgetit
+        $scope.message = 'Yep, I am lost..';//idontgetit
       } else if ($scope.failureRate >= 64 && $scope.failureRate <= 71.999999999999) {
         $scope.message = 'RSPEC...Wahhhh?';//shocked
       } else if ($scope.failureRate >= 72 && $scope.failureRate <= 79.999999999999) {
