@@ -1,11 +1,12 @@
 <div class="jumbotron">
-	
-	<section class="meetingjumbotronn">
-		
+
+	<div class="meetingjumbotronn">
+
 		<div class="container">
 
 			<h1>Yolko, how are you feeling?</h1>
 
+<!-- YOLKO BEHAVIOR -->
 			<div ng-show="zzz">
 				<img src="../img/zzz.png"/>
 			</div>
@@ -42,29 +43,61 @@
 			<div ng-show="burnt">
 				<img src="../img/burnt.png"/>
 			</div>
+<!-- YOLKO BEHAVIOR -->
 
+{{ dislikePercent}} <br>
 
-			<div>
+			<div><!-- YOLKO MESSAGE -->
 				<h2 class="yolkomessage">{{ message }}</h2>
-			</div>
+			</div><!-- YOLKO MESSAGE -->
 
-			<div>
+			<div><!-- Vote bottons -->
 			  <button class="btn btn-xlarge btn-success"
-			  	ng-click="voteUp()" ng-disabled="voteUpDisabled">
-			  	<span class="glyphicon glyphicon-thumbs-up"></span></button> <!-- vote up -->				
-			  
-			  <button class="btn btn-xlarge btn-danger"  
-			  	ng-click="voteDown()" ng-disabled="voteDownDisabled">
-			  	<span class="glyphicon glyphicon-thumbs-down"></span></button> <!-- vote down -->
-			</div> <!-- bottons -->
+			  	ng-click="attendee.vote = 'like'">
+			  	<span class="glyphicon glyphicon-thumbs-up"></span></button> <!-- vote up -->
 
-			<!-- <div ng-show="green" style="width:500px;height:100px;border:1px solid #000; background-color: green;"></div>
-			<div ng-show="yellow" style="width:500px;height:100px;border:1px solid #000; background-color: yellow;"></div>
-			<div ng-show="red" style="width:500px;height:100px;border:1px solid #000; background-color: red;"></div> -->
-			
-		</div>
-		
-	</div>
+			  <button class="btn btn-xlarge btn-danger"
+			  	ng-click="attendee.vote = 'dislike'">
+			  	<span class="glyphicon glyphicon-thumbs-down"></span></button> <!-- vote down -->
+			</div> <!-- Vote bottons -->
+
+    </div><!-- container -->
+
+      <div class="row"> <!-- row of bottons -->
+        <div class="col-md-4"> <!-- Speed Buttons -->
+          <button class="btn btn-default" ng-class="{ 'btn-info': attendee.speed == -1 }"
+            ng-click='attendee.speed = -1'>
+            <i class="fa fa-fast-backward fa-3x"></i>
+          </button> <!-- SLOW DOWN-->
+          <button class="btn btn-default" ng-class="{ 'btn-info': attendee.speed == -1 }"
+            ng-click='attendee.speed = 1'>
+            <i class="fa fa-fast-forward fa-3x"></i>
+          </button> <!-- SPEED  UP -->
+        </div><!-- Speed Buttons -->
+
+        <div class="col-md-4"><!-- Volume Up Button-->
+          <button class="btn btn-default" ng-class="{ 'btn-info': attendee.volumeUp == 'yes' }"
+            ng-click='attendee.volumeUp = "yes"'>
+            <i class="fa fa-volume-up fa-3x"></i>
+          </button>
+        </div><!-- Volume Up Button-->
+
+        <div class="col-md-4"><!-- Panic Button-->
+          <button class="btn btn-default"
+            ng-show="attendee.feeling == 'fine'" ng-click='panicButton(attendee)'>
+            <i class="fa fa-fire-extinguisher fa-3x"></i>
+          </button>
+          <button class="btn btn-success"
+            ng-show="attendee.feeling == 'panic'" ng-click='panicButton(attendee)'>
+            <i class="fa fa-check-circle-o fa-3x"></i>
+          </button>
+        </div><!-- Panic Button-->
+      </div><!-- row of bottons -->
+
+
+  </div><!-- meetingjumbotronn -->
+</div><!-- jumbotron -->
+
 
 	<div class="container">
 
@@ -74,9 +107,9 @@
 	  	</div>
 		</div>
 
-	  <div class="form-group">
+	  <div class="form-group"> <!-- Questions -->
 		  <div class="input-group">
-		    <input ng-model="question" type="text" class="form-control" placeholder="Ask way..."
+		    <input ng-model="questionContent" type="text" class="form-control" placeholder="Ask way..."
 					ng-keydown="addQuestionKeyDown($event)">
 		    <span class="input-group-btn">
 		      <button class="btn btn-default askbutton" type="button" ng-click="addQuestionClick()">Ask</button>
@@ -88,7 +121,7 @@
 	  	<div class="panel-body">
 	    	<ul class="list-group">
 				  <li class="list-group-item" ng-repeat="(key, question) in questions">
-				    {{ question.question }} 
+				    {{ question.content }}
 				    <span>
 				      <button class="btn btn-sm btn-default alignright" ng-click="removeQuestion(key)">X</button>
 				    </span>
@@ -96,24 +129,13 @@
 				</ul>
 	  	</div>
 		</div>
-		
-				</div>
-			</div>
-		</div>
+	</div>
 
-	</section>
-</div>
 
 <footer class="site-footer">
 </footer>
 
 
-
-	<!-- <pre>
-		green: {{green}}
-		yellow: {{yellow}}
-		red: {{red}}
-	</pre> -->
 	<!-- <div ng-show="howManyVoteUps">
 		<p>Vote Ups: {{ howManyVoteUps }}</p>
 	</div>

@@ -1,34 +1,81 @@
 <div class="container results">
 	<h1>Hello There Presenter</h1>
 
-	<div class="iconoresult">
-		<img src="../img/hola.png"/>
-		<h2>You got this! You hear me!?</h2>
-	</div>
+  <h1>Yolko, how are you feeling?</h1>
+
+<!-- YOLKO BEHAVIOR -->
+      <div ng-show="zzz">
+        <img src="../img/zzz.png"/>
+      </div>
+      <div ng-show="laughing">
+        <img src="../img/laughing.png"/>
+      </div>
+      <div ng-show="igotthis">
+        <img src="../img/igotthis.png"/>
+      </div>
+      <div ng-show="easy">
+        <img src="../img/easy.png"/>
+      </div>
+      <div ng-show="easywhereisthefood">
+        <img src="../img/easywhereisthefood.png"/>
+      </div>
+      <div ng-show="yum">
+        <img src="../img/yum.png"/>
+      </div>
+      <div ng-show="startingtonotgetit">
+        <img src="../img/startingtonotgetit.png"/>
+      </div>
+      <div ng-show="idontgetit">
+        <img src="../img/idontgetit.png"/>
+      </div>
+      <div ng-show="shocked">
+        <img src="../img/shocked.png"/>
+      </div>
+      <div ng-show="fire">
+        <img src="../img/fire.png"/>
+      </div>
+      <div ng-show="beaten">
+        <img src="../img/beaten.png"/>
+      </div>
+      <div ng-show="burnt">
+        <img src="../img/burnt.png"/>
+      </div>
+
+    <h2>{{ message }}</h2>
 
 	<div class="panel panel-default">
   	<div class="panel-body">
-  		<strong><h1>{{ failureRate | number:0 }}% of your audience hate you</h1></strong>
+  		<strong><h2>{{ dislikePercent | number:0 }}% of your audience does not like the presentation</h2></strong>
     	<h1>Total of Votes: {{ totalVotes }}</h1>
 			<h1>Happy Votes: {{ howManyVoteUps }}</h1>
 			<h1>Sad Votes: {{ howManyVoteDowns }}</h1>
   	</div>
 	</div>
 
-	<button class="resetbutton btn btn-danger" ng-click="deleteAllVotes()">Reset Yolko</button>
-	<button class="resetbutton btn btn-danger" ng-click="deleteAllQuestions()">Reset Questions</button>
+
+
+
 
 			<div class="panel panel-default">
 	  	<div class="panel-body">
 	    	<ul class="list-group">
-				  <li class="list-group-item" ng-repeat="(key, question) in questions">
-				    {{ question.question }} 
+				  <li class="list-group-item" ng-repeat="question in questions">
+				    {{ question.content }}
 				    <span>
-				      <button class="btn btn-sm btn-default alignright" ng-click="removeQuestion(key)">X</button>
+				      <!-- <button class="btn btn-sm btn-default alignright" ng-click="removeQuestion(question)">X</button> -->
 				    </span>
 				  </li>
 				</ul>
 	  	</div>
 		</div>
+
+      <button class="resetbutton btn btn-danger" ng-click="resetYolko()">Reset Yolko</button>
+      <button class="resetbutton btn btn-danger" ng-click="resetVolume()">Reset Volume</button>
+      <button class="resetbutton btn btn-danger" ng-click="resetEverything()">Reset Everything</button>
+      <button class="resetbutton btn btn-danger btn-lg" ng-click="deleteEverything()">Delete Everything</button>
+
+
+
+      resetVolume
 
 </div>

@@ -8,29 +8,15 @@ myApp.config(['$routeProvider', function($routeProvider) {
 		.when('/', {
 			templateUrl: 'views/home.html',
 		})
-		.when('/login', {
-			templateUrl: 'views/login.html',
-			controller: 'RegistrationController'
-		})
-		.when('/register', {
-			templateUrl: 'views/register.html',
-			controller: 'RegistrationController'
-		})
 		.when('/meeting', {
 			templateUrl: 'views/meeting.html',
-			controller: 'MeetingController' 
+			controller: 'AttendeeController'
 		})
 		.when('/results', {
 			templateUrl: 'views/results.html',
-			controller: 'MeetingController'  
-		})
-		.when('/presentation/:accessCode', {
-			templateUrl: 'views/presentation.html',
-			controller: 'PresentationController'
+			controller: 'PresenterController'
 		})
 		.otherwise({
 			redirectTo: '/'
 		});
 }]);
-
-myApp.value('currentUser',{name: 'abdul'});
