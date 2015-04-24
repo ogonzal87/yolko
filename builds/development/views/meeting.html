@@ -45,8 +45,6 @@
 			</div>
 <!-- YOLKO BEHAVIOR -->
 
-{{ dislikePercent}} <br>
-
 			<div><!-- YOLKO MESSAGE -->
 				<h2 class="yolkomessage">{{ message }}</h2>
 			</div><!-- YOLKO MESSAGE -->
@@ -63,31 +61,32 @@
 
     </div><!-- container -->
 
-      <div class="row"> <!-- row of bottons -->
-        <div class="col-md-4"> <!-- Speed Buttons -->
-          <button class="btn btn-default" ng-class="{ 'btn-info': attendee.speed == -1 }"
-            ng-click='attendee.speed = -1'>
-            <i class="fa fa-fast-backward fa-3x"></i>
-          </button> <!-- SLOW DOWN-->
-          <button class="btn btn-default" ng-class="{ 'btn-info': attendee.speed == -1 }"
-            ng-click='attendee.speed = 1'>
-            <i class="fa fa-fast-forward fa-3x"></i>
-          </button> <!-- SPEED  UP -->
-        </div><!-- Speed Buttons -->
+      <div class="row attendee-buttons-panel"> <!-- row of bottons -->
 
-        <div class="col-md-4"><!-- Volume Up Button-->
-          <button class="btn btn-default" ng-class="{ 'btn-info': attendee.volumeUp == 'yes' }"
-            ng-click='attendee.volumeUp = "yes"'>
+       <div class="col-md-4 attendee-buttons"><!-- Volume Up Button-->
+          <button class="btn btn-default" title="Press if you can't hear!"
+            ng-class="{ 'btn-info': attendee.volumeUp == 'yes' }" ng-click='attendee.volumeUp = "yes"'>
             <i class="fa fa-volume-up fa-3x"></i>
           </button>
         </div><!-- Volume Up Button-->
 
-        <div class="col-md-4"><!-- Panic Button-->
-          <button class="btn btn-default"
+        <div class="col-md-4 attendee-buttons sift-to-right"> <!-- Speed Buttons -->
+          <button class="btn btn-default" title="Press if you want the speaker to go slower"
+            ng-class="{ 'btn-info': attendee.speed == -1 }" ng-click='attendee.speed = -1'>
+            <i class="fa fa-fast-backward fa-3x"></i>
+          </button> <!-- SLOW DOWN-->
+          <button class="btn btn-default" title="Press if you want the speaker to go faster"
+            ng-class="{ 'btn-info': attendee.speed == 1 }" ng-click='attendee.speed = 1'>
+            <i class="fa fa-fast-forward fa-3x"></i>
+          </button> <!-- SPEED  UP -->
+        </div><!-- Speed Buttons -->
+
+        <div class="col-md-4 attendee-buttons"><!-- Panic Button-->
+          <button class="btn btn-default" title="Press if you are lost!"
             ng-show="attendee.feeling == 'fine'" ng-click='panicButton(attendee)'>
             <i class="fa fa-fire-extinguisher fa-3x"></i>
           </button>
-          <button class="btn btn-success"
+          <button class="btn btn-success" title="I am fine now!"
             ng-show="attendee.feeling == 'panic'" ng-click='panicButton(attendee)'>
             <i class="fa fa-check-circle-o fa-3x"></i>
           </button>
@@ -101,11 +100,11 @@
 
 	<div class="container">
 
-		<div class="panel panel-default">
+		<!-- <div class="panel panel-default">
 	  	<div class="panel-body">
 	    	<h1>Total of Votes: {{ totalVotes }}</h1>
 	  	</div>
-		</div>
+		</div> -->
 
 	  <div class="form-group"> <!-- Questions -->
 		  <div class="input-group">
@@ -117,7 +116,7 @@
 		  </div>
 		</div>
 
-		<div class="panel panel-default">
+		<div class="panel panel-default" ng-hide='questions.length == 0'>
 	  	<div class="panel-body">
 	    	<ul class="list-group">
 				  <li class="list-group-item" ng-repeat="(key, question) in questions">

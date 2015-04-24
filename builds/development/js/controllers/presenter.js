@@ -124,20 +124,20 @@ myApp
 
 
 
-
-
-
 // ============================ RESET ================================
 
- $scope.resetEverything = function() {
+
+  $scope.resetVolumeTraceker = function() {
     _.each($scope.attendees, function(attendee) {
-      attendee.feelings = 'good';
-      attendee.speed = 0;
-      attendee.volume = 0;
-      attendee.vote = 'like';
+      attendee.volumeUp = 'no';
       $scope.attendees.$save(attendee);
-      var refArrayQuestions = new Firebase(FIREBASE_URL + '/attendees/' + attendee.key + '/questions');
-      refArrayQuestions.remove()
+    });
+  };
+
+  $scope.resetSpeedTracker = function() {
+    _.each($scope.attendees, function(attendee) {
+      attendee.speed = 0;
+      $scope.attendees.$save(attendee);
     });
   };
 
@@ -148,12 +148,28 @@ myApp
     });
   };
 
-  $scope.resetVolume = function() {
+  $scope.resetPanicTracker = function() {
     _.each($scope.attendees, function(attendee) {
-      attendee.volumeUp = 'no';
+      attendee.feeling = 'fine';
       $scope.attendees.$save(attendee);
     });
   };
+
+ $scope.resetEverything = function() {
+    _.each($scope.attendees, function(attendee) {
+      attendee.feeling = 'fine';
+      attendee.speed = 0;
+      attendee.volumeUp = 0;
+      attendee.vote = 'like';
+      $scope.attendees.$save(attendee);
+      var refArrayQuestions = new Firebase(FIREBASE_URL + '/attendees/' + attendee.key + '/questions');
+      refArrayQuestions.remove()
+    });
+  };
+
+
+
+
 
   $scope.deleteEverything = function() {
    refArrayAllAttendees.remove();

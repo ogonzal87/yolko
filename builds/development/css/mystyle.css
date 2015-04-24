@@ -86,7 +86,7 @@
 	background-image: url('../img/main-bg.png');
 	background-repeat: no-repeat;
 	background-position: 200% 100%;
-	padding: 200px 0 100px 0;
+	padding: 160px 0 50px 0;
 	margin-bottom: 20px;
 }
 
@@ -124,6 +124,22 @@ strong {
 }
 
 
+.attendee-buttons-panel {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: black;
+  background:rgba(0,0,0,0.5);
+}
+
+.attendee-buttons {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.sift-to-right {
+  padding-left: 60px;
+}
+
 /*Buttons
 =================================*/
 
@@ -142,8 +158,8 @@ strong {
 .btn-xlarge {
     padding: 18px 28px;
     margin-left: 30px;
-    margin-top: 30px; 
-    margin-bottom: 20px; 
+    margin-top: 30px;
+    margin-bottom: 20px;
     font-size: 30px;
     line-height: normal;
     -webkit-border-radius: 8px;
@@ -155,11 +171,12 @@ strong {
 	font-size: 20px;
 	padding: 16px;
 }
-	
+
 .alignright {
 	display: inline-block;
  	float: right;
 }
+
 
 /* Logos & Icons
 ================================= */
