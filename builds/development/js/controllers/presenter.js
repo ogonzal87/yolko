@@ -27,7 +27,7 @@ myApp
     }, 0);
     $scope.speedValue = speedValue;
     $scope.numAttendees = numAttendees;
-    $scope.speedStatus = Math.round((speedValue / numAttendees) * 100);
+    $scope.speedStatus = speed(Math.round((speedValue / numAttendees) * 100));
   //SPEED END
   ///////////////////////////////////////////////////////////////////////////
 
@@ -38,7 +38,7 @@ myApp
     });
     $scope.volumeUpAttendees = volumeUpAttendees.length;
     $scope.numAttendees = numAttendees;
-    $scope.volumeUpPercent = Math.round((volumeUpAttendees.length / numAttendees) * 100);
+    $scope.volumeUpPercent = volume(Math.round((volumeUpAttendees.length / numAttendees) * 100));
   //VOLUME END
   ///////////////////////////////////////////////////////////////////////////
 
@@ -49,7 +49,7 @@ myApp
     });
     $scope.feelingValues = feelingValues.length;
     $scope.numAttendees = numAttendees;
-    $scope.panicPercent = Math.round((feelingValues.length / numAttendees) * 100);
+    $scope.panicPercent = panic(Math.round((feelingValues.length / numAttendees) * 100));
   //FEELING END
   ///////////////////////////////////////////////////////////////////////////
 
@@ -58,7 +58,7 @@ myApp
   $scope.questions = [];
   _.each($scope.attendees, function(attendee) {
     _.each(attendee.questions, function(question) {
-     $scope.questions.push({ content: question.content, name: attendee.name })
+     $scope.questions.push({ content: question.content, name: attendee.name });
     });
   });
   //QUESTIONS END
@@ -72,6 +72,50 @@ myApp
 
 
   // // ======================** UTILITY FUNCTIONS **===================================
+
+
+  function speed(percent) {
+    if (percent > 20) {
+      return { content: 'Too Fast!', class: 'panel-dashboard-bad' };
+    } else if (percent > 10) {
+      return { content: 'Little fast', class: 'panel-dashboard-middle' };
+    } else if (percent < -20) {
+      return { content: 'TOO SLOW!', class: 'panel-dashboard-bad' };
+    } else if (percent < -10) {
+      return { content: 'Little slow', class: 'panel-dashboard-middle' };
+    } else {
+      return { content: 'Good', class: 'panel' };
+    }
+  }
+
+  function volume(percent) {
+    if (percent > 10) {
+      return { content: percent, class: 'panel-dashboard-bad' };
+    } else if (percent > 5) {
+      return { content: percent, class: 'panel-dashboard-middle' };
+    } else if (percent < -10) {
+      return { content: percent, class: 'text-danger' };
+    } else if (percent < -5) {
+      return { content: percent, class: 'text-warning' };
+    } else {
+      return { content: percent, class: 'panel-dashboard-bad' };
+    }
+  }
+
+  function panic(percent) {
+    if (percent > 10) {
+      return { content: percent, class: 'panel-dashboard-bad' };
+    } else if (percent > 5) {
+      return { content: percent, class: 'panel-dashboard-middle' };
+    } else if (percent < -10) {
+      return { content: percent, class: 'text-danger' };
+    } else if (percent < -5) {
+      return { content: percent, class: 'text-warning' };
+    } else {
+      return { content: percent, class: 'panel-dashboard-bad' };
+    }
+  }
+
 
 //Displaying Yolko
   $scope.zzz = true;

@@ -1,8 +1,89 @@
+<!--   DASHBOARD -->
+<div class="container">
+  <div class="row dashboard">
+
+    <div class="col-lg-3 col-sm-6">
+    <!-- START WIDGET -->
+      <div class="panel">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-xs-4">
+              <i class="fa fa-user fa-3x"></i>
+            </div>
+            <div class="col-xs-8">
+              <h3>Attendees</h3>
+              <h3>{{ numAttendees }}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-sm-6">
+    <!-- START WIDGET -->
+      <div class="panel" ng-class="volumeUpPercent.class">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-xs-4">
+              <i class="fa fa-volume-off fa-3x"></i>
+            </div>
+            <div class="col-xs-8">
+              <h3>Can't Hear</h3>
+              <h3>{{ volumeUpPercent.content }}%</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-sm-6">
+      <!-- START WIDGET -->
+      <div class="panel" ng-class=".class">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-xs-4">
+              <i class="fa fa-rocket fa-3x"></i>
+            </div>
+            <div class="col-xs-8">
+              <h3>Speed</h3>
+              <h3>{{ speedStatus.content }}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-sm-6">
+      <!-- START WIDGET -->
+      <div class="panel" ng-class="panicPercent.class">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-xs-4">
+              <i class="fa fa-fire-extinguisher fa-3x"></i>
+            </div>
+            <div class="col-xs-8">
+              <h3>Lost</h3>
+              <h3>{{ panicPercent.content }}%</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <strong><h2>{{ dislikePercent | number:0 }}% of your audience does not like the presentation</h2></strong>
+  </div>
+</div>
+
+
+
 <div class="container results">
 
   <div class="container text-center">
-  	<h1>Hello There Presenter</h1>
-
     <h1>How is Yolko feeling?</h1>
 
   <!-- YOLKO BEHAVIOR -->
@@ -42,20 +123,18 @@
         <div ng-show="burnt">
           <img src="../img/burnt.png"/>
         </div>
-
+    <!-- YOLKO MESSAGE -->
       <h2>{{ message }}</h2>
+    <!-- YOLKO MESSAGE END -->
+
   </div>
+</div><!-- container results end -->
 
-	<div class="panel panel-default">
-  	<div class="panel-body">
-  		<strong><h2>{{ dislikePercent | number:0 }}% of your audience does not like the presentation</h2></strong>
-    	<h1>Total of Attendees: {{ numAttendees }}</h1>
-			<h1>Speak Up!: {{ volumeUpPercent }}%</h1>
-			<h1>Slower Please!: {{ speedStatus }}%</h1>
-  	</div>
-	</div>
 
-	<div class="panel panel-default">
+  <!--   DASHBOARD END-->
+
+<!--   QUESTIONS -->
+	<div class="panel panel-default" ng-hide="questions == 0">
   	<div class="panel-body">
     	<ul class="list-group">
 			  <li class="list-group-item" ng-repeat="question in questions">
@@ -67,6 +146,7 @@
 			</ul>
   	</div>
 	</div>
+  <!--   QUESTIONS END -->
 
   <button class="resetbutton btn btn-danger" ng-click="resetYolko()">Reset Yolko</button>
   <button class="resetbutton btn btn-danger" ng-click="resetVolumeTraceker()">Reset Volume</button>
@@ -76,4 +156,4 @@
   <button class="resetbutton btn btn-danger btn-lg" ng-click="deleteEverything()">Start New Presentation</button>
 
 
-</div>
+
