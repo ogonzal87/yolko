@@ -1,9 +1,12 @@
 <!--   DASHBOARD -->
 <div class="container">
+  <div class="dashboard-spacer">
+  </div>
 
-  <div class="row dashboard">
 
-    <div class="col-lg-3 col-sm-6">
+  <div class="row">
+
+    <div class="col-md-3 col-sm-6">
     <!-- START WIDGET -->
       <div class="panel">
         <div class="panel-body">
@@ -20,7 +23,7 @@
       </div>
     </div>
 
-    <div class="col-lg-3 col-sm-6">
+    <div class="col-md-3 col-sm-6 ">
     <!-- START WIDGET -->
       <div class="panel" ng-class="volumeUpPercent.class">
         <div class="panel-body">
@@ -37,7 +40,7 @@
       </div>
     </div>
 
-    <div class="col-lg-3 col-sm-6">
+    <div class="col-md-3 col-sm-6 ">
       <!-- START WIDGET -->
       <div class="panel" ng-class="speedPercent.class">
         <div class="panel-body">
@@ -54,7 +57,7 @@
       </div>
     </div>
 
-    <div class="col-lg-3 col-sm-6">
+    <div class="col-md-3 col-sm-6 ">
       <!-- START WIDGET -->
       <div class="panel" ng-class="panicPercent.class">
         <div class="panel-body">
@@ -74,18 +77,23 @@
   </div>
 </div>
 
-<div class="panel panel-default">
-  <div class="panel-body">
-    <!-- YOLKO MESSAGE -->
-     <strong><h2>{{ message }}</h2></strong>
-    <!-- YOLKO MESSAGE END -->
-  </div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <!-- YOLKO MESSAGE -->
+         <strong><h2>{{ message }}</h2></strong>
+        <!-- YOLKO MESSAGE END -->
+      </div>
+    </div>
+    </div>
 </div>
 
 
 <!-- {{speedPercent.value}}<br>
 {{volumeUpPercent.value}}<br> -->
-{{dislikePercent}}<br>
+<!-- {{dislikePercent}}<br> -->
 
 
 <div class="container results">
@@ -138,16 +146,20 @@
 
 <!-- RESET BUTTONS -->
 <div class="container text-center">
-    <button class="resetbutton btn btn-default" ng-click="resetYolko()">Reset Yolko</button>
-    <button class="resetbutton btn btn-default" ng-click="resetVolumeTraceker()">Reset Volume</button>
-    <button class="resetbutton btn btn-default" ng-click="resetSpeedTracker()">Reset Speed</button>
-    <button class="resetbutton btn btn-default" ng-click="resetPanicTracker()">Reset Panic</button>
-    <button class="resetbutton btn btn-default" ng-click="resetEverything()">Reset Everything</button>
+    <button class="btn btn-default resetbutton" ng-click="resetYolko()">Reset Yolko</button>
+    <button class="btn btn-default resetbutton" ng-click="resetVolumeTraceker()">Reset Volume</button>
+    <button class="btn btn-default resetbutton" ng-click="resetSpeedTracker()">Reset Speed</button>
+    <button class="btn btn-default resetbutton" ng-click="resetPanicTracker()">Reset Panic</button>
+    <button class="btn btn-default resetbutton" ng-click="resetEverything()">Reset Everything</button>
 
-  <div class="start-new-presentation-button">
-    <button class="resetbutton btn btn-danger" ng-click="deleteEverything()">Start New Presentation</button>
+  <div class="resetbutton">
+    <button class="btn btn-danger" ng-click="deleteEverything()">Start New Presentation</button>
   </div>
 </div>
+
+</div>
+
+
 
 <!-- RESET BUTTONS -->
 

@@ -72,10 +72,6 @@
 	color: #E7E7E7;
 }
 
-.register {
-	margin-top: 120px;
-}
-
 
 /* Jumbotron
 ================================= */
@@ -101,7 +97,11 @@
 }
 
 h1 {
-	font-weight: 200;
+	font-weight: 250px;
+}
+
+h2 {
+  color: grey;
 }
 
 p {
@@ -117,7 +117,7 @@ strong {
 
 .lead {
 	color: #d5c1f2;
-	margin-bottom: 75px;
+/*	margin-bottom: 75px;*/
 }
 
 
@@ -186,6 +186,13 @@ strong {
  	float: right;
 }
 
+.btn-info {
+  box-shadow: 0 3px 0 #0182A9;
+  text-shadow: 0 1px 1px rgba(0,0,0,.3);
+  font-size: 1.5em;
+  width: 330px;
+  padding: 15px 0;
+}
 
 /* Logos & Icons
 ================================= */
@@ -215,7 +222,6 @@ strong {
 
 
 .site-footer {
-	padding: 20px;
 	margin-top: 50px;
 	height: 100px;
 	color: #fff;
@@ -256,10 +262,8 @@ strong {
 
 /*Results Page*/
 
-.dashboard {
+.dashboard-spacer {
   padding-top: 100px;
-  max-height: 40px;
-  padding-bottom: 20px;
 }
 
 .panel-dashboard-good {
@@ -286,6 +290,6 @@ h3 {
   padding-left: 0;
 }
 
-.start-new-presentation-button {
+.resetbutton {
   padding-top: 5px;
 }
