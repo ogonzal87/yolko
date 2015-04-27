@@ -1,5 +1,6 @@
 <!--   DASHBOARD -->
 <div class="container">
+
   <div class="row dashboard">
 
     <div class="col-lg-3 col-sm-6">
@@ -38,7 +39,7 @@
 
     <div class="col-lg-3 col-sm-6">
       <!-- START WIDGET -->
-      <div class="panel" ng-class=".class">
+      <div class="panel" ng-class="speedPercent.class">
         <div class="panel-body">
           <div class="row">
             <div class="col-xs-4">
@@ -46,7 +47,7 @@
             </div>
             <div class="col-xs-8">
               <h3>Speed</h3>
-              <h3>{{ speedStatus.content }}</h3>
+              <h3>{{ speedPercent.content }}</h3>
             </div>
           </div>
         </div>
@@ -75,16 +76,22 @@
 
 <div class="panel panel-default">
   <div class="panel-body">
-    <strong><h2>{{ dislikePercent | number:0 }}% of your audience does not like the presentation</h2></strong>
+    <!-- YOLKO MESSAGE -->
+     <strong><h2>{{ message }}</h2></strong>
+    <!-- YOLKO MESSAGE END -->
   </div>
 </div>
 
+
+<!-- {{speedPercent.value}}<br>
+{{volumeUpPercent.value}}<br> -->
+{{dislikePercent}}<br>
 
 
 <div class="container results">
 
   <div class="container text-center">
-    <h1>How is Yolko feeling?</h1>
+  <!--   <h1>How is Yolko feeling?</h1> -->
 
   <!-- YOLKO BEHAVIOR -->
         <div ng-show="zzz">
@@ -93,17 +100,11 @@
         <div ng-show="laughing">
           <img src="../img/laughing.png"/>
         </div>
-        <div ng-show="igotthis">
-          <img src="../img/igotthis.png"/>
+        <div ng-show="want">
+          <img src="../img/want.png"/>
         </div>
-        <div ng-show="easy">
-          <img src="../img/easy.png"/>
-        </div>
-        <div ng-show="easywhereisthefood">
-          <img src="../img/easywhereisthefood.png"/>
-        </div>
-        <div ng-show="yum">
-          <img src="../img/yum.png"/>
+        <div ng-show="indifferent">
+          <img src="../img/indifferent.png"/>
         </div>
         <div ng-show="startingtonotgetit">
           <img src="../img/startingtonotgetit.png"/>
@@ -111,22 +112,9 @@
         <div ng-show="idontgetit">
           <img src="../img/idontgetit.png"/>
         </div>
-        <div ng-show="shocked">
-          <img src="../img/shocked.png"/>
-        </div>
-        <div ng-show="fire">
-          <img src="../img/fire.png"/>
-        </div>
-        <div ng-show="beaten">
-          <img src="../img/beaten.png"/>
-        </div>
         <div ng-show="burnt">
           <img src="../img/burnt.png"/>
         </div>
-    <!-- YOLKO MESSAGE -->
-      <h2>{{ message }}</h2>
-    <!-- YOLKO MESSAGE END -->
-
   </div>
 </div><!-- container results end -->
 
@@ -148,12 +136,19 @@
 	</div>
   <!--   QUESTIONS END -->
 
-  <button class="resetbutton btn btn-danger" ng-click="resetYolko()">Reset Yolko</button>
-  <button class="resetbutton btn btn-danger" ng-click="resetVolumeTraceker()">Reset Volume</button>
-  <button class="resetbutton btn btn-danger" ng-click="resetSpeedTracker()">Reset Speed</button>
-  <button class="resetbutton btn btn-danger" ng-click="resetPanicTracker()">Reset Panic</button>
-  <button class="resetbutton btn btn-danger" ng-click="resetEverything()">Reset Everything</button>
-  <button class="resetbutton btn btn-danger btn-lg" ng-click="deleteEverything()">Start New Presentation</button>
+<!-- RESET BUTTONS -->
+<div class="container text-center">
+    <button class="resetbutton btn btn-default" ng-click="resetYolko()">Reset Yolko</button>
+    <button class="resetbutton btn btn-default" ng-click="resetVolumeTraceker()">Reset Volume</button>
+    <button class="resetbutton btn btn-default" ng-click="resetSpeedTracker()">Reset Speed</button>
+    <button class="resetbutton btn btn-default" ng-click="resetPanicTracker()">Reset Panic</button>
+    <button class="resetbutton btn btn-default" ng-click="resetEverything()">Reset Everything</button>
 
+  <div class="start-new-presentation-button">
+    <button class="resetbutton btn btn-danger" ng-click="deleteEverything()">Start New Presentation</button>
+  </div>
+</div>
+
+<!-- RESET BUTTONS -->
 
 

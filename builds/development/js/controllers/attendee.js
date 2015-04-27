@@ -113,50 +113,40 @@ myApp
 //Displaying Yolko
   $scope.zzz = true;
   function displayYolko() {
-    $scope.zzz                   = $scope.dislikePercent < 7.999999999999 || null;
-    $scope.burnt                 = $scope.dislikePercent >= 96;
-    $scope.laughing              = $scope.dislikePercent >= 8 && $scope.dislikePercent <= 15.999999999999;
-    $scope.igotthis              = $scope.dislikePercent >= 16 && $scope.dislikePercent <= 23.999999999999;
-    $scope.easy                  = $scope.dislikePercent >= 24 && $scope.dislikePercent <= 31.999999999999;
-    $scope.easywhereisthefood    = $scope.dislikePercent >= 32 && $scope.dislikePercent <= 39.999999999999;
-    $scope.yum                   = $scope.dislikePercent >= 40 && $scope.dislikePercent <= 47.999999999999;
-    $scope.startingtonotgetit    = $scope.dislikePercent >= 48 && $scope.dislikePercent <= 55.999999999999;
-    $scope.idontgetit            = $scope.dislikePercent >= 56 && $scope.dislikePercent <= 63.999999999999;
-    $scope.shocked               = $scope.dislikePercent >= 64 && $scope.dislikePercent <= 71.999999999999;
-    $scope.fire                  = $scope.dislikePercent >= 72 && $scope.dislikePercent <= 79.999999999999;
-    $scope.beaten                = $scope.dislikePercent >= 80 && $scope.dislikePercent <= 87.999999999999;
-    $scope.burnt                 = $scope.dislikePercent >= 88 && $scope.dislikePercent <= 95.999999999999;
+    $scope.zzz                = $scope.dislikePercent < 7.999999999999 || null;
+    $scope.burnt              = $scope.dislikePercent >= 96;
+    $scope.badass             = $scope.dislikePercent >= 8 && $scope.dislikePercent <= 15.999999999999;
+    $scope.igotthis           = $scope.dislikePercent >= 16 && $scope.dislikePercent <= 23.999999999999;
+    $scope.confident          = $scope.dislikePercent >= 24 && $scope.dislikePercent <= 31.999999999999;
+    $scope.want               = $scope.dislikePercent >= 32 && $scope.dislikePercent <= 39.999999999999;
+    $scope.tastey             = $scope.dislikePercent >= 40 && $scope.dislikePercent <= 47.999999999999;
+    $scope.startingtonotgetit = $scope.dislikePercent >= 48 && $scope.dislikePercent <= 55.999999999999;
+    $scope.idontgetit         = $scope.dislikePercent >= 56 && $scope.dislikePercent <= 63.999999999999;
+    $scope.shocked            = $scope.dislikePercent >= 64 && $scope.dislikePercent <= 75.999999999999;
+    $scope.burnt              = $scope.dislikePercent >= 76 && $scope.dislikePercent <= 95.999999999999;
   } //Displaying Yolko
 
   // Displaying Message
-    function updateMessage() {
-    if ($scope.dislikePercent < 7.999999999999 || null) {
-        $scope.message = 'ZZZ'; //ZZZ
-      } else if ($scope.failureRate >= 96) {
-        $scope.message = ''; //burnt
-      } else if ($scope.dislikePercent >= 8 && $scope.dislikePercent <= 15.999999999999) {
-        $scope.message = 'Mmm... This is too easy'; //laughing
-      } else if ($scope.dislikePercent >= 16 && $scope.dislikePercent <= 23.999999999999) {
-        $scope.message = 'Dude, you are killing it out there. Do your thang!'; // igotthis
-      } else if ($scope.dislikePercent >= 24 && $scope.dislikePercent <= 31.999999999999) {
-        $scope.message = 'I feel like partying... Are you with me?'; //easy
-      } else if ($scope.dislikePercent >= 32 && $scope.dislikePercent <= 39.999999999999) {
-        $scope.message = 'HTML? Too easy, where is the food...?'; // easywhereisthefood
-      } else if ($scope.dislikePercent >= 40 && $scope.dislikePercent <= 47.999999999999) {
-        $scope.message = 'Yummmm'; //yum
-      } else if ($scope.dislikePercent >= 48 && $scope.dislikePercent <= 55.999999999999) {
-        $scope.message = 'Psh, are you getting what he is saying?';//startingtonotgetit
-      } else if ($scope.dislikePercent >= 56 && $scope.dislikePercent <= 63.999999999999) {
-        $scope.message = 'Yep, I am lost..';//idontgetit
-      } else if ($scope.dislikePercent >= 64 && $scope.dislikePercent <= 71.999999999999) {
-        $scope.message = 'RSPEC...Wahhhh?';//shocked
-      } else if ($scope.dislikePercent >= 72 && $scope.dislikePercent <= 79.999999999999) {
-        $scope.message = '';
-      } else if ($scope.failureRate >= 80 && $scope.dislikePercent <= 87.999999999999) {
-        $scope.message = 'Imma walk it out'; //beaten
-      } else if ($scope.dislikePercent >= 88 && $scope.dislikePercent <= 95.999999999999) {
-        $scope.message = '';//burnt
-      };
+  function updateMessage() {
+  if ($scope.dislikePercent >= 64) {
+      $scope.message = '';//burnt
+    } else if ($scope.dislikePercent >= 56) {
+      $scope.message = 'I am kinda lost here...';//lost
+    } else if ($scope.dislikePercent >= 48) {
+      $scope.message = 'I like the presentation... I am just not feeling the subject that much...';//strating to not get it
+    } else if ($scope.dislikePercent >= 40) {
+      $scope.message = "I'm happy to be here"; //tasty
+    } else if ($scope.dislikePercent >= 32) {
+      $scope.message = "I'm feeling this. Want more!"; //want
+    } else if ($scope.dislikePercent >= 24) {
+      $scope.message = "I can hear my IQ increasing"; //confident
+    } else if ($scope.dislikePercent >= 16) {
+      $scope.message = "Is the presenter killing it or what..?! That's ma man right ther!"; //igotthis
+    } else if ($scope.dislikePercent >= 8) {
+      $scope.message = "I'm feeling so badass right now!"; //badass
+    } else {
+      $scope.message = "ZZZZZZZ"; //ZZZ
+    }
   } // Displaying Message
 
 

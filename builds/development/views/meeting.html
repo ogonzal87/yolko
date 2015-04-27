@@ -4,26 +4,28 @@
 
 		<div class="container">
 
+    <!-- {{dislikePercent}} -->
+
 			<h1>Yolko, how are you feeling?</h1>
 
 <!-- YOLKO BEHAVIOR -->
 			<div ng-show="zzz">
 				<img src="../img/zzz.png"/>
 			</div>
-			<div ng-show="laughing">
-				<img src="../img/laughing.png"/>
+			<div ng-show="badass">
+				<img src="../img/badass.png"/>
 			</div>
 			<div ng-show="igotthis">
 				<img src="../img/igotthis.png"/>
 			</div>
-			<div ng-show="easy">
-				<img src="../img/easy.png"/>
+			<div ng-show="confident">
+				<img src="../img/confident.png"/>
 			</div>
-			<div ng-show="easywhereisthefood">
-				<img src="../img/easywhereisthefood.png"/>
+			<div ng-show="want">
+				<img src="../img/want.png"/>
 			</div>
-			<div ng-show="yum">
-				<img src="../img/yum.png"/>
+			<div ng-show="tastey">
+				<img src="../img/tastey.png"/>
 			</div>
 			<div ng-show="startingtonotgetit">
 				<img src="../img/startingtonotgetit.png"/>
@@ -33,12 +35,6 @@
 			</div>
 			<div ng-show="shocked">
 				<img src="../img/shocked.png"/>
-			</div>
-			<div ng-show="fire">
-				<img src="../img/fire.png"/>
-			</div>
-			<div ng-show="beaten">
-				<img src="../img/beaten.png"/>
 			</div>
 			<div ng-show="burnt">
 				<img src="../img/burnt.png"/>
@@ -50,11 +46,11 @@
 			</div><!-- YOLKO MESSAGE -->
 
 			<div><!-- Vote bottons -->
-			  <button class="btn btn-xlarge btn-success"
+			  <button class="btn btn-xlarge btn-success like-button"
 			  	ng-click="attendee.vote = 'like'">
 			  	<span class="glyphicon glyphicon-thumbs-up"></span></button> <!-- vote up -->
 
-			  <button class="btn btn-xlarge btn-danger"
+			  <button class="btn btn-xlarge btn-danger dislike-button"
 			  	ng-click="attendee.vote = 'dislike'">
 			  	<span class="glyphicon glyphicon-thumbs-down"></span></button> <!-- vote down -->
 			</div> <!-- Vote bottons -->
@@ -70,12 +66,12 @@
           </button>
         </div><!-- Volume Up Button-->
 
-        <div class="col-md-4 attendee-buttons sift-to-right"> <!-- Speed Buttons -->
-          <button class="btn btn-default" title="Press if you want the speaker to go slower"
+        <div class="col-md-4 attendee-buttons"> <!-- Speed Buttons -->
+          <button class="btn btn-default slow-down-button" title="Press if you want the speaker to go slower"
             ng-class="{ 'btn-info': attendee.speed == -1 }" ng-click='attendee.speed = -1'>
             <i class="fa fa-fast-backward fa-3x"></i>
           </button> <!-- SLOW DOWN-->
-          <button class="btn btn-default" title="Press if you want the speaker to go faster"
+          <button class="btn btn-default go-faster-button" title="Press if you want the speaker to go faster"
             ng-class="{ 'btn-info': attendee.speed == 1 }" ng-click='attendee.speed = 1'>
             <i class="fa fa-fast-forward fa-3x"></i>
           </button> <!-- SPEED  UP -->
@@ -93,18 +89,10 @@
         </div><!-- Panic Button-->
       </div><!-- row of bottons -->
 
-
   </div><!-- meetingjumbotronn -->
 </div><!-- jumbotron -->
 
-
 	<div class="container">
-
-		<!-- <div class="panel panel-default">
-	  	<div class="panel-body">
-	    	<h1>Total of Votes: {{ totalVotes }}</h1>
-	  	</div>
-		</div> -->
 
 	  <div class="form-group"> <!-- Questions -->
 		  <div class="input-group">
@@ -133,22 +121,3 @@
 
 <!-- <footer class="site-footer">
 </footer> -->
-
-
-	<!-- <div ng-show="howManyVoteUps">
-		<p>Vote Ups: {{ howManyVoteUps }}</p>
-	</div>
-
-	<div ng-show="howManyVoteDowns">
-		<p>Vote Downs: {{ howManyVoteDowns }}</p>
-	</div>
-
-	<div ng-show="delta">
-		<p>This is the delta (VoteUps - voteDowns): {{ delta }}</p>
-	</div> -->
-
-	<!-- <div ng-repeat="vote in voteUps">{{voteUps}}</div> -->
-<!-- 	<div ng-model="voteUps">{{voteUps[0].$id}}</div>
- -->
-<!-- 	<div ng-repeat="vote in voteDowns">{{voteDown}}</div>
-	<div ng-model="voteDowns">{{voteDowns.$id}}</div> -->
