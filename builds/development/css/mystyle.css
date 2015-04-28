@@ -1,6 +1,10 @@
 /*/* Typography
 ================================= */
 
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .navbar-text {
 	font-weight: bold;
 	margin-right: 0;
@@ -79,7 +83,7 @@
 	background-image: url('../img/main-bg.png');
 	background-repeat: no-repeat;
 	background-position: 200% 100%;
-	padding: 90px 0 0 0;
+	padding: 120px 0 0 0;
 	margin-bottom: 20px;
 }
 
@@ -88,16 +92,20 @@
   padding-bottom: 80px;
 }
 
+.jumbotron h1 {
+  font-size: 63px;
+  line-height: 1;
+  color: #ffffff;
+  font-weight: 200;
+  margin-bottom: 30px;
+}
+
 .meetingjumbotronn {
 	text-align: center;
 }
 
 .containerhome {
 	text-align: center;
-}
-
-h1 {
-	font-weight: 250px;
 }
 
 h2 {
@@ -194,6 +202,14 @@ strong {
   padding: 15px 0;
 }
 
+.resetbutton {
+  margin-top: 5px;
+}
+
+.start-new-presentation-button {
+  margin-top: 70px;
+}
+
 /* Logos & Icons
 ================================= */
 
@@ -214,6 +230,7 @@ strong {
 
 .navbar-default .navbar-nav > li > a {
   color: #FCFCFC;
+  font-size: 25px;
 }
 
 
@@ -281,6 +298,12 @@ strong {
   color: white;
 }
 
+.panel-dashboard-bad-with-margin {
+  background-color: #F05050;
+  color: white;
+  margin-bottom: 25px;
+}
+
 h3 {
   margin-top: 0;
   margin-bottom: 0;
@@ -290,6 +313,3 @@ h3 {
   padding-left: 0;
 }
 
-.resetbutton {
-  padding-top: 5px;
-}

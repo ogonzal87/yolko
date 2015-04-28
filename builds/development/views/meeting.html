@@ -61,18 +61,18 @@
 
        <div class="col-md-4 attendee-buttons"><!-- Volume Up Button-->
           <button class="btn btn-default" title="Press if you can't hear!"
-            ng-class="{ 'btn-info': attendee.volumeUp == 'yes' }" ng-click='attendee.volumeUp = "yes"'>
+            ng-class="{ 'btn-warning': attendee.volumeUp == 'yes' }" ng-click='attendee.volumeUp = "yes"'>
             <i class="fa fa-volume-up fa-3x"></i>
           </button>
         </div><!-- Volume Up Button-->
 
         <div class="col-md-4 attendee-buttons"> <!-- Speed Buttons -->
           <button class="btn btn-default slow-down-button" title="Press if you want the speaker to go slower"
-            ng-class="{ 'btn-info': attendee.speed == -1 }" ng-click='attendee.speed = -1'>
+            ng-class="{ 'btn-success': attendee.speed == -1 }" ng-click='attendee.speed = -1'>
             <i class="fa fa-fast-backward fa-3x"></i>
           </button> <!-- SLOW DOWN-->
           <button class="btn btn-default go-faster-button" title="Press if you want the speaker to go faster"
-            ng-class="{ 'btn-info': attendee.speed == 1 }" ng-click='attendee.speed = 1'>
+            ng-class="{ 'btn-success': attendee.speed == 1 }" ng-click='attendee.speed = 1'>
             <i class="fa fa-fast-forward fa-3x"></i>
           </button> <!-- SPEED  UP -->
         </div><!-- Speed Buttons -->

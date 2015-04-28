@@ -116,7 +116,7 @@ myApp
 
     function volume(percent) {
       if (percent > 10) {
-        return { value: percent, content: percent, class: 'panel-dashboard-bad' };
+        return { value: percent, content: percent, class: 'panel-dashboard-bad-with-margin' };
       } else {
         return { value: percent, content: percent, class: 'panel' };
       }
