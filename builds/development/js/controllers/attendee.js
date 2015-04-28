@@ -113,17 +113,16 @@ myApp
 //Displaying Yolko
   $scope.zzz = true;
   function displayYolko() {
-    $scope.zzz                = $scope.dislikePercent < 7.999999999999 || null;
-    $scope.burnt              = $scope.dislikePercent >= 96;
-    $scope.badass             = $scope.dislikePercent >= 8 && $scope.dislikePercent <= 15.999999999999;
-    $scope.igotthis           = $scope.dislikePercent >= 16 && $scope.dislikePercent <= 23.999999999999;
-    $scope.confident          = $scope.dislikePercent >= 24 && $scope.dislikePercent <= 31.999999999999;
-    $scope.want               = $scope.dislikePercent >= 32 && $scope.dislikePercent <= 39.999999999999;
-    $scope.tastey             = $scope.dislikePercent >= 40 && $scope.dislikePercent <= 47.999999999999;
-    $scope.startingtonotgetit = $scope.dislikePercent >= 48 && $scope.dislikePercent <= 55.999999999999;
-    $scope.idontgetit         = $scope.dislikePercent >= 56 && $scope.dislikePercent <= 63.999999999999;
+    $scope.burnt              = $scope.dislikePercent >= 76;
     $scope.shocked            = $scope.dislikePercent >= 64 && $scope.dislikePercent <= 75.999999999999;
-    $scope.burnt              = $scope.dislikePercent >= 76 && $scope.dislikePercent <= 95.999999999999;
+    $scope.idontgetit         = $scope.dislikePercent >= 56 && $scope.dislikePercent <= 63.999999999999;
+    $scope.startingtonotgetit = $scope.dislikePercent >= 48 && $scope.dislikePercent <= 55.999999999999;
+    $scope.tastey             = $scope.dislikePercent >= 40 && $scope.dislikePercent <= 47.999999999999;
+    $scope.want               = $scope.dislikePercent >= 32 && $scope.dislikePercent <= 39.999999999999;
+    $scope.confident          = $scope.dislikePercent >= 24 && $scope.dislikePercent <= 31.999999999999;
+    $scope.igotthis           = $scope.dislikePercent >= 16 && $scope.dislikePercent <= 23.999999999999;
+    $scope.badass             = $scope.dislikePercent >= 8 && $scope.dislikePercent <= 15.999999999999;
+    $scope.zzz                = $scope.dislikePercent < 7.999999999999 || null;
   } //Displaying Yolko
 
   // Displaying Message
