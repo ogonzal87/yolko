@@ -8,7 +8,7 @@ myApp
 
 // CREATE DEFAULT ATTENDEE ON PAGE ARRIVAL
   var randomKey = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 8);
-  var defaultAttendee = { feeling: 'fine', speed: 0, volumeUp: 'no', key: randomKey, vote: "like" };
+  var defaultAttendee = { feeling: 'fine', speed: 0, volumeUp: 'no', key: randomKey, vote: "like", startedAt: Firebase.ServerValue.TIMESTAMP };
   var refObject = new Firebase(FIREBASE_URL + '/attendees/' + defaultAttendee.key);
   var syncObject = $firebaseObject(refObject);
   refObject.set(defaultAttendee); //Creates the attendee on page arrival
