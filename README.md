@@ -1,6 +1,5 @@
 #YOLKO
 
-
 ##Overview
 
 All presentation and lectures are a one-directional interaction. 
@@ -12,16 +11,19 @@ Yolko was developed by me in a one week sprint while a student at General Assemb
 ##How to use Yolko
 Yolko has two views; one for the attendees and one for the presenter. 
 To test Yolko just launch <a href="https://imyolko.firebaseapp.com/">the project</a>. You can also open multiple tabs to simulate multiple attendees. 
-Make sure you also go to this URL (https://imyolko.firebaseapp.com/#/results.) This is the presenter view or dashboard and is hidden from the attendees. 
-Anything that happens in the attendees views will be reflected in the presenter view or dashboard in REAL TIME. Check it out! Is pretty cool.
 
+Make sure you also go to this URL: https://imyolko.firebaseapp.com/#/results. This is the presenter view or Dashboard and is hidden from the attendees. 
+Anything that happens in the attendees views will be reflected in the presenter view or Dashboard in REAL TIME. Check it out! Is pretty cool.
+
+<a href="https://imyolko.firebaseapp.com/">LAUNCH ATTENDEE VIEW</a>
+<a href="https://imyolko.firebaseapp.com/results">LAUNCH PRESENTER VIEW</a>
 
 ##Technologies Used
 
 * AngularJS 1.3.14
 * Firebase (AngularFire)
 * Javascript
-* _UnderScore
+* _UnderScore.js
 * HTML5
 * CSS3
 * Twitter Bootstrap
@@ -31,9 +33,11 @@ Anything that happens in the attendees views will be reflected in the presenter 
 * Google Fonts
 * NoSQL
 
+##Links:
 
+* <a href="https://trello.com/b/N42Z9LUl/project-4-yolko">Trello Board</a>
+* <a href="https://imyolko.firebaseapp.com/">Site on Firebase</a>
 
-<p><a href="https://github.com/ogonzal87/yolko">Yolko</a></p>
 
 
 
