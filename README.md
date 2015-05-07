@@ -12,10 +12,11 @@ Yolko was developed by me in a one week sprint while a student at General Assemb
 Yolko has two views; one for the attendees and one for the presenter. 
 To test Yolko just launch <a href="https://imyolko.firebaseapp.com/">the project</a>. You can also open multiple tabs to simulate multiple attendees. 
 
-Make sure you also go to this URL: https://imyolko.firebaseapp.com/#/results. This is the presenter view or Dashboard and is hidden from the attendees. 
+Make sure you also go to this <a href="https://imyolko.firebaseapp.com/#/results">**URL**</a>. This is the presenter view or Dashboard and is hidden from the attendees. 
 Anything that happens in the attendees views will be reflected in the presenter view or Dashboard in REAL TIME. Check it out! Is pretty cool.
 
 <a href="https://imyolko.firebaseapp.com/">LAUNCH ATTENDEE VIEW</a>
+
 <a href="https://imyolko.firebaseapp.com/results">LAUNCH PRESENTER VIEW</a>
 
 ##Technologies Used
