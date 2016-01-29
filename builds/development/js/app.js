@@ -1,9 +1,16 @@
-var myApp = angular.module('myApp', ['ngRoute', 'appControllers', 'firebase'])
+var myApp = angular.module('YolkoApp', [
+	'ngRoute',
+	'appControllers',
+	'firebase'
+])
+
+angular.module('YolkoApp')
 .constant('FIREBASE_URL', 'https://imyolko.firebaseio.com/');
 
 var appControllers = angular.module('appControllers', ['firebase']);
 
-myApp.config(['$routeProvider', function($routeProvider) {
+angular.module('YolkoApp')
+.config(['$routeProvider', function($routeProvider) {
 	$routeProvider
 		.when('/', {
 			templateUrl: 'views/home.html',

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="YolkoApp">
 <head>
   <meta charset="UTF-8">
   <title>Yolko | OG Productions</title>
@@ -19,51 +19,30 @@
 	<script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
 
   <script src="js/app.js"></script>
-<!--   <script src="js/controllers/meeting.js"></script> -->
-<!--   <script src="js/controllers/registration.js"></script>
-  <script src="js/services/authentication.js"></script> -->
-  <!-- <script src="js/controllers/presentation.js"></script> -->
   <script src="js/controllers/attendee.js"></script>
   <script src="js/controllers/presenter.js"></script>
 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
 
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+</head>
 
-  </head>
-    <body>
-      <header>
-      	<nav ng-include="'views/nav.html'"></nav>
-      </header>
-      <div class>
-        <main ng-view=""></main>
-      </div>
+<body>
+<!-- Nav bar -->
+  <header>
+  	<nav ng-include="'views/nav.html'"></nav>
+  </header>
 
-    <!-- FOoter -->
-<!--     <footer class="site-footer"> -->
- <!--      <div class="container">
-        <div class="row">
-          <div class="col-sm-4">
-              <p class="footertext">&copy; 2015 OG Productions, Inc.</p>
-          </div> -->
-<!--           <div class="col-sm-4">
-              <p class="footertext"><a href="mailto:ogonzal87@gmail.com">ogonzal87@gmail.com</a></p>
-              <a href="http://www.oscar-gonzalez.co/">Portfolio</a>
-              <a href="https://www.linkedin.com/in/ogonzalez87">Linkedin</a>
-              <a href="https://github.com/ogonzal87">Github</a>
-              678.372.3716
-          </div>
-        </div> -->
-<!--     </footer>footer
- -->
+<!-- Main Content of App -->
+  <div class>
+    <main ng-view=""></main>
+  </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="bootstrapjs/bootstrap.min.js"></script>
-
-
-  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="bootstrapjs/bootstrap.min.js"></script>
+</body>
 </html>
